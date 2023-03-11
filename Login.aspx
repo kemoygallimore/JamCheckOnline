@@ -47,8 +47,8 @@
         }
         .auto-style10 {
             z-index: 1;
-            left: 301px;
-            top: 2px;
+            left: 303px;
+            top: 1px;
             position: absolute;
             height: 374px;
             width: 352px;
@@ -68,6 +68,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div>
+            <nav class="navber navbar-expand-lg navbar-light">
+
+
+
+            </nav>
+        </div>
 <div>      
         <asp:Login ID="Login1" runat="server" BackColor="White" BorderColor="Yellow" BorderPadding="4" BorderStyle="Solid" BorderWidth="5px" Font-Names="Rockwell Condensed" Font-Size="Large" ForeColor="#009900" TextLayout="TextOnTop" CssClass="auto-style9" Font-Bold="True">
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />

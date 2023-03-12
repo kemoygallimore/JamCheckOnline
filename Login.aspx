@@ -34,28 +34,20 @@
             left: 34px;
             top: 290px;
             position: absolute;
-            width: 207px;
+            width: 287px;
             height: 23px;
         }
         .auto-style9 {
             z-index: 1;
-            left: 318px;
+            left: 264px;
             top: 27px;
             position: absolute;
             height: 405px;
-            width: 674px;
-        }
-        .auto-style10 {
-            z-index: 1;
-            left: 303px;
-            top: 1px;
-            position: absolute;
-            height: 374px;
-            width: 352px;
+            width: 915px;
         }
         .auto-style11 {
-            height: 371px;
-            width: 290px;
+            height: 359px;
+            width: 348px;
         }
         .auto-style12 {
             height: 34px;
@@ -64,9 +56,21 @@
         .auto-style13 {
             width: 289px;
         }
+        .auto-style15 {
+            z-index: 1;
+            left: 357px;
+            top: 24px;
+            position: absolute;
+            height: 360px;
+            width: 530px;
+                }
+        .content {
+  max-width: 500px;
+  margin: auto;
+}
     </style>
 </head>
-<body>
+<body class="content">
     <form id="form1" runat="server">
         <div>
             <nav class="navber navbar-expand-lg navbar-light">
@@ -93,9 +97,9 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style3">
-                                        <asp:TextBox ID="UserName" runat="server" Font-Size="0.95em" Width="200px"></asp:TextBox>
+                                        <asp:TextBox ID="UserName" runat="server" Font-Size="0.95em" Width="331px" Height="25px"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/nissangtrh.jpg" style="z-index: 1; left: 301px; top: 24px; position: absolute; height: 360px; width: 352px;" BorderStyle="Dashed" />
+                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" BorderStyle="None" CssClass="auto-style15" />
                                     </td>
                                 </tr>
                                 <tr>
@@ -105,7 +109,7 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style2">
-                                        <asp:TextBox ID="Password" runat="server" Font-Size="0.95em" Height="16px" TextMode="Password" Width="200px"></asp:TextBox>
+                                        <asp:TextBox ID="Password" runat="server" Font-Size="0.95em" Height="25px" TextMode="Password" Width="330px"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ErrorMessage="Password is required." ToolTip="Password is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>

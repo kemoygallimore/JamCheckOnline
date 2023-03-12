@@ -75,6 +75,7 @@
     <Content Include="Properties\enterpriseh.png" />
     <Content Include="Properties\Fordh.jpg" />
     <Content Include="Properties\Hondah.jpg" />
+    <Content Include="Properties\logo.png" />
     <Content Include="Properties\mazdah.jpg" />
     <Content Include="Properties\mercedesh.jpg" />
     <Content Include="Properties\Mitsubishi.jpg" />

@@ -39,8 +39,8 @@
         }
         .auto-style9 {
             z-index: 1;
-            left: 264px;
-            top: 27px;
+            left: 234px;
+            top: 201px;
             position: absolute;
             height: 405px;
             width: 915px;
@@ -64,21 +64,50 @@
             height: 360px;
             width: 530px;
                 }
-        .content {
-  max-width: 500px;
-  margin: auto;
-}
+    
+        .auto-style16 {
+            height: 118px;
+            width: 731px;
+            margin-top: 40px;
+        }
+        .auto-style17 {
+            width: 1401px;
+            height: 99px;
+            position: absolute;
+            left: 2px;
+            top: 7px;
+        }
+    
     </style>
 </head>
-<body class="content">
-    <form id="form1" runat="server">
-        <div>
-            <nav class="navber navbar-expand-lg navbar-light">
+<body >
+    <form id="form1" runat="server" class="auto-style16">
+        
+     <div class="auto-style17">
 
+         <asp:Image ID="Image2" ImageUrl="~/Properties/logo.png" runat="server" Height="89px" Width="179px" />
+         <asp:Menu ID="Menu1" runat="server" ForeColor="#009900" Orientation="Horizontal">
+             <Items>
+                 <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Page1.aspx"></asp:MenuItem>
+                 <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue">
+                     <asp:MenuItem Text="Toyota" Value="Toyota"></asp:MenuItem>
+                     <asp:MenuItem Text="Subaru" Value="Subaru"></asp:MenuItem>
+                     <asp:MenuItem Text="Nissan" Value="Nissan"></asp:MenuItem>
+                     <asp:MenuItem Text="Mazda" Value="Mazda"></asp:MenuItem>
+                 </asp:MenuItem>
+                 <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                 <asp:MenuItem Text="About Us" Value="New Item"></asp:MenuItem>
+                 <asp:MenuItem Text="FAQs" Value="New Item"></asp:MenuItem>
+                 <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
+                 <asp:MenuItem Text="Log In" Value="Log In"></asp:MenuItem>
+             </Items>
+             <StaticHoverStyle BackColor="#99FF66" BorderColor="Black" />
+             <StaticMenuItemStyle Font-Bold="True" Font-Names="Segoe UI Emoji" Font-Size="Smaller" Font-Underline="False" Height="20px" HorizontalPadding="20px" Width="158px" />
+             <StaticMenuStyle BorderStyle="Outset" />
+         </asp:Menu>
 
-
-            </nav>
-        </div>
+     </div>
+        
 <div>      
         <asp:Login ID="Login1" runat="server" BackColor="White" BorderColor="Yellow" BorderPadding="4" BorderStyle="Solid" BorderWidth="5px" Font-Names="Rockwell Condensed" Font-Size="Large" ForeColor="#009900" TextLayout="TextOnTop" CssClass="auto-style9" Font-Bold="True">
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />

@@ -102,7 +102,7 @@
                  <asp:MenuItem Text="Log In" Value="Log In"></asp:MenuItem>
              </Items>
              <StaticHoverStyle BackColor="#99FF66" BorderColor="Black" />
-             <StaticMenuItemStyle Font-Bold="True" Font-Names="Segoe UI Emoji" Font-Size="Smaller" Font-Underline="False" Height="20px" HorizontalPadding="20px" Width="158px" />
+             <StaticMenuItemStyle Font-Bold="True" Font-Names="Segoe UI Emoji" Font-Size="Smaller" Font-Underline="False" Height="30px" HorizontalPadding="20px" Width="158px" />
              <StaticMenuStyle BorderStyle="Outset" />
          </asp:Menu>
 

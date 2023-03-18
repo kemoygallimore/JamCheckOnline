@@ -39,8 +39,8 @@
         }
         .auto-style9 {
             z-index: 1;
-            left: 234px;
-            top: 201px;
+            left: 213px;
+            top: 333px;
             position: absolute;
             height: 405px;
             width: 915px;
@@ -66,29 +66,28 @@
                 }
     
         .auto-style16 {
-            height: 528px;
-            width: 1293px;
+            height: 236px;
+            width: 1390px;
             margin-top: 40px;
             margin-right: 760px;
         }
-        .auto-style17 {
-            width: 1401px;
-            height: 99px;
-            position: absolute;
-            left: 0px;
-            top: 0px;
-        }
-    h1{
+        h1{
             color: green;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri;
 
+        }
+        .auto-style17 {
+            height: 78px;
+        }
+        .auto-style18 {
+            margin-top: 0px;
         }
     </style>
 </head>
 <body style="margin-top: 0px" >
     <form id="form1" runat="server" class="auto-style16">
         
-     <div>
+     <div class="auto-style18">
          <asp:Image ID="Image2" ImageUrl="~/Properties/logo.png" runat="server" Height="89px" Width="179px" />
      </div>
         
@@ -117,13 +116,13 @@
 
      </div>
         <div>
-            <h1>
+            <h1 class="auto-style17">
                 Log In
             </h1>
         </div>
         
 <div>      
-        <asp:Login ID="Login1" runat="server" BackColor="White" BorderColor="Yellow" BorderPadding="4" BorderStyle="Solid" BorderWidth="5px" Font-Names="Rockwell Condensed" Font-Size="Large" ForeColor="#009900" TextLayout="TextOnTop"  Font-Bold="True">
+        <asp:Login ID="Login1" runat="server" BackColor="White" BorderColor="Yellow" BorderPadding="4" BorderStyle="Solid" BorderWidth="5px" Font-Names="Rockwell Condensed" Font-Size="Large" ForeColor="#009900" TextLayout="TextOnTop" CssClass="auto-style9" Font-Bold="True">
             <InstructionTextStyle Font-Italic="True" ForeColor="Black" />
             <LayoutTemplate>
                 <table cellpadding="4" cellspacing="0" style="border-collapse: collapse;">

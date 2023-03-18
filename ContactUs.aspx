@@ -8,18 +8,67 @@
     <style type="text/css">
         .auto-style1 {
             width: 1394px;
+            height: 66px;
         }
         .auto-style2 {
-            width: 1490px;
+            width: 1396px;
+            height: 130px;
         }
         h1{
             color: green;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri;
 
         }
+        .auto-style3 {
+            position: absolute;
+            top: 281px;
+            left: 17px;
+            right: 1186px;
+            z-index: 1;
+            height: 20px;
+        }
+        .auto-style4 {
+            position: absolute;
+            top: 331px;
+            left: 18px;
+            z-index: 1;
+        }
+        .auto-style5 {
+            position: absolute;
+            top: 229px;
+            left: 19px;
+        }
+        .auto-style6 {
+            height: 374px;
+        }
+        .auto-style7 {
+            position: absolute;
+            top: 429px;
+            left: 16px;
+            z-index: 1;
+            height: 29px;
+        }
+        .auto-style8 {
+            position: absolute;
+            top: 498px;
+            left: 14px;
+            z-index: 1;
+        }
+        .auto-style9 {
+            position: absolute;
+            top: 382px;
+            left: 19px;
+            z-index: 1;
+        }
+        .auto-style10 {
+            position: absolute;
+            top: 380px;
+            left: 155px;
+            z-index: 1;
+        }
     </style>
 </head>
-<body>
+<body style="margin-top: 0px; height: 502px;">
     <form id="form1" runat="server">
         <div><div class="auto-style2">
 
@@ -37,7 +86,7 @@
                  <asp:MenuItem Text="About Us" Value="New Item"></asp:MenuItem>
                  <asp:MenuItem Text="FAQs" Value="New Item"></asp:MenuItem>
                  <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
-                 <asp:MenuItem Text="Log In" Value="Log In"></asp:MenuItem>
+                 <asp:MenuItem Text="Log In" Value="Log In" NavigateUrl="~/Login.aspx"></asp:MenuItem>
              </Items>
              <StaticHoverStyle BackColor="#99FF66" BorderColor="Black" />
              <StaticMenuItemStyle Font-Bold="True" Font-Names="Segoe UI Emoji" Font-Size="Smaller" Font-Underline="False" Height="30px" HorizontalPadding="20px" Width="158px" />
@@ -51,6 +100,15 @@
             </div>
         
         </div>
+        <div class="auto-style6">
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style3" Text="Last Name"></asp:Label>
+        <asp:Label ID="Label2" runat="server" CssClass="auto-style5" Text="First Name"></asp:Label>
+        <asp:Label ID="Label3" runat="server" CssClass="auto-style4" Text="Email"></asp:Label>
+            <asp:Label ID="Label4" runat="server" CssClass="auto-style7" Text="Telephone"></asp:Label>
+            <asp:Label ID="Label5" runat="server" CssClass="auto-style8" Text="Reason for Contact "></asp:Label>
+            <asp:RadioButton ID="RadioButton1" runat="server" CssClass="auto-style9" />
+            <asp:RadioButton ID="RadioButton2" runat="server" CssClass="auto-style10" />
+       </div>
     </form>
 </body>
 </html>

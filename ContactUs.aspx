@@ -5,10 +5,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 1394px;
+        }
+        .auto-style2 {
+            width: 1490px;
+        }
+        h1{
+            color: green;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seri;
+
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div><div class="auto-style17">
+        <div><div class="auto-style2">
 
          <asp:Image ID="Image2" ImageUrl="~/Properties/logo.png" runat="server" Height="89px" Width="179px" />
          <asp:Menu ID="Menu1" runat="server" ForeColor="#009900" Orientation="Horizontal">
@@ -32,6 +45,10 @@
          </asp:Menu>
 
      </div>
+            <div class="auto-style1"> 
+
+                <h1> Contact Us</h1>
+            </div>
         
         </div>
     </form>

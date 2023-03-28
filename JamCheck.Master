@@ -7,6 +7,8 @@
     <title></title>
     
     <style type="text/css">
+
+      
         .auto-style2 {
             width: 1265px;
             height: 191px;
@@ -20,6 +22,7 @@
             left: 0px;
             z-index: 1;
             width: 162px;
+            height: 100px;
         }
         .auto-style4 {
             width: 1099px;
@@ -31,11 +34,12 @@
         }
         .auto-style5 {
            width: 1262px;
-            height: 203px;
+            height: 187px;
             position: absolute;
-            top: 494px;
-            left: 14px;
+            top: 788px;
+            left: 11px;
             z-index: 1;
+            margin-top: 0px;
         }
         .auto-style6 {
             font-family: 'Segoe UI';
@@ -50,20 +54,23 @@
         .auto-style7 {
             position: absolute;
             top: 0px;
-            left: 1110px;
+            left: 1112px;
             z-index: 1;
-            width: 150px;
-            height: 25px;
+            width: 148px;
+            height: 32px;
+        }
+        .auto-style8 {
+            margin-left: 2px;
         }
         </style>
 </head>
-<body style="height: 461px; margin-top: 119px">
+<body style="height: 861px; margin-top: 119px">
     <form id="form1" runat="server">
-
+<div style="margin:auto">
         <div>
                    
                 <asp:Panel ID="Panel1" runat="server" BackColor="#00CC00" Height="98px" CssClass="auto-style2" style="z-index: 1">
-                    <asp:Image ID="Image1" runat="server" Height="96px" ImageUrl="~/Properties/logo.png" CssClass="auto-style3" />
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" CssClass="auto-style3" />
                                                            
                     <asp:Panel ID="Panel3" runat="server" CssClass="auto-style4">
 
@@ -91,18 +98,19 @@
         <div class="auto-style5">
             <footer>
 
-                <asp:Panel ID="Panel4" runat="server" Height="57px">
-                    <h2> Subcribe for more JAMCHECK<asp:TextBox ID="TextBox1" runat="server" BackColor="#FFFF66" BorderStyle="None" CssClass="auto-style6" ></asp:TextBox>
+                <asp:Panel ID="Panel4" runat="server" Height="57px" CssClass="auto-style8">
+                    <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Subcribe for more from JAMCHECK<asp:TextBox ID="TextBox1" runat="server" BackColor="#FFFF66" BorderStyle="Solid" CssClass="auto-style6" ></asp:TextBox>
                         <asp:Button ID="Button1" runat="server" CssClass="auto-style7" EnableTheming="False" Font-Bold="True" Font-Names="Segoe UI" Text="Subcribe" />
                     </h2>
                 </asp:Panel>
 
-            </footer>
+            
             <asp:Panel ID="Panel5" runat="server" Height="125px" BackColor="#00CC00">
-                <asp:Image ID="Image2" runat="server" Height="124px" ImageUrl="~/Properties/logo.png" Width="250px" />
+                <asp:Image ID="Image2" runat="server" Height="125px" ImageUrl="~/Properties/logo.png" Width="250px" />
             </asp:Panel>
+                </footer>
         </div>
-
+        </div>
     </form>
 </body>
 </html>

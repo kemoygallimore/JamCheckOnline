@@ -3,5 +3,11 @@
 
     
 
+     <asp:Panel ID="Panel6" runat="server" Height="364px">
+         <asp:Image ID="Image4" runat="server" style="z-index: 1; position: absolute; top: 122px; left: 348px; " Width="523px" Height="359px" />
+     </asp:Panel>
+
+    
+
 </asp:Content>
 

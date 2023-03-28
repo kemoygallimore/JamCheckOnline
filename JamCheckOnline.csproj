@@ -85,6 +85,7 @@
     <Content Include="Properties\servicebg.jpeg" />
     <Content Include="Web.config" />
     <Content Include="Home.aspx" />
+    <None Include="Login" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactUs.aspx.cs">
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>Login</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>Login</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

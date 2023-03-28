@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JamCheck.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="MyfirstWebApplication1.WebForm1" %>
  <asp:Content ID ="home" ContentPlaceHolderID ="ContentPlaceHolder1" runat="server">
 
-    <div style= "margin:auto">
+     <div style= "margin:auto">
      <asp:Panel ID="Panel6" runat="server" Height="661px" BackColor="#FFFF66" BorderStyle="None" style="margin-left: 0px; margin-right: 13px;" Width="1266px">
          <asp:Image ID="Image4" runat="server" style="z-index: 1; position: absolute; top: 111px; left: 132px; height: 361px;" Width="523px" ImageUrl="~/Properties/istockphoto-1370432521-170667a-removebg-preview (1).png" />
          <asp:Panel ID="Panel7" runat="server" style="z-index: 1; width: 1267px; height: 311px; position: absolute; top: 472px; left: 8px" BackColor="White">

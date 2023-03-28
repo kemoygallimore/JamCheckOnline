@@ -31,11 +31,12 @@
         }
         .auto-style5 {
            width: 1262px;
-            height: 203px;
+            height: 187px;
             position: absolute;
-            top: 494px;
-            left: 14px;
+            top: 788px;
+            left: 11px;
             z-index: 1;
+            margin-top: 0px;
         }
         .auto-style6 {
             font-family: 'Segoe UI';
@@ -57,7 +58,7 @@
         }
         </style>
 </head>
-<body style="height: 461px; margin-top: 119px">
+<body style="height: 861px; margin-top: 119px">
     <form id="form1" runat="server">
 
         <div>
@@ -97,10 +98,11 @@
                     </h2>
                 </asp:Panel>
 
-            </footer>
+            
             <asp:Panel ID="Panel5" runat="server" Height="125px" BackColor="#00CC00">
                 <asp:Image ID="Image2" runat="server" Height="124px" ImageUrl="~/Properties/logo.png" Width="250px" />
             </asp:Panel>
+                </footer>
         </div>
 
     </form>

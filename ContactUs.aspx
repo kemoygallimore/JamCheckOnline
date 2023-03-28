@@ -23,48 +23,103 @@
             position: absolute;
             top: 281px;
             left: 17px;
-            right: 1186px;
+            right: 1138px;
             z-index: 1;
             height: 20px;
         }
         .auto-style4 {
             position: absolute;
-            top: 331px;
-            left: 18px;
+            top: 337px;
+            left: 17px;
             z-index: 1;
         }
         .auto-style5 {
             position: absolute;
             top: 229px;
-            left: 19px;
+            left: 18px;
         }
         .auto-style6 {
-            height: 374px;
+            height: 525px;
         }
         .auto-style7 {
             position: absolute;
-            top: 429px;
-            left: 16px;
+            top: 480px;
+            left: 14px;
             z-index: 1;
             height: 29px;
         }
         .auto-style8 {
             position: absolute;
-            top: 498px;
-            left: 14px;
+            top: 554px;
+            left: 13px;
             z-index: 1;
         }
         .auto-style9 {
             position: absolute;
-            top: 382px;
-            left: 19px;
+            top: 435px;
+            left: 13px;
             z-index: 1;
         }
         .auto-style10 {
             position: absolute;
-            top: 380px;
-            left: 155px;
+            top: 433px;
+            left: 111px;
             z-index: 1;
+        }
+        .auto-style11 {
+            position: absolute;
+            top: 401px;
+            left: 15px;
+            z-index: 1;
+        }
+        .auto-style12 {
+            position: absolute;
+            top: 699px;
+            left: 17px;
+            z-index: 1;
+            right: 1125px;
+            height: 29px;
+        }
+        .auto-style13 {
+            position: absolute;
+            top: 305px;
+            left: 19px;
+            z-index: 1;
+            width: 480px;
+            height: 27px;
+        }
+        .auto-style14 {
+            position: absolute;
+            top: 251px;
+            left: 19px;
+            z-index: 1;
+            width: 480px;
+            height: 27px;
+        }
+        .auto-style15 {
+            position: absolute;
+            top: 360px;
+            left: 20px;
+            z-index: 1;
+            width: 479px;
+            height: 35px;
+        }
+        .auto-style16 {
+            position: absolute;
+            top: 510px;
+            left: 19px;
+            z-index: 1;
+            width: 484px;
+            height: 30px;
+        }
+        .auto-style17 {
+            position: absolute;
+            top: 580px;
+            left: 16px;
+            z-index: 1;
+            width: 724px;
+            height: 90px;
+            margin-top: 0px;
         }
     </style>
 </head>
@@ -82,7 +137,7 @@
                      <asp:MenuItem Text="Nissan" Value="Nissan"></asp:MenuItem>
                      <asp:MenuItem Text="Mazda" Value="Mazda"></asp:MenuItem>
                  </asp:MenuItem>
-                 <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                 <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
                  <asp:MenuItem Text="About Us" Value="New Item"></asp:MenuItem>
                  <asp:MenuItem Text="FAQs" Value="New Item"></asp:MenuItem>
                  <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
@@ -101,13 +156,20 @@
         
         </div>
         <div class="auto-style6">
-        <asp:Label ID="Label1" runat="server" CssClass="auto-style3" Text="Last Name"></asp:Label>
-        <asp:Label ID="Label2" runat="server" CssClass="auto-style5" Text="First Name"></asp:Label>
-        <asp:Label ID="Label3" runat="server" CssClass="auto-style4" Text="Email"></asp:Label>
-            <asp:Label ID="Label4" runat="server" CssClass="auto-style7" Text="Telephone"></asp:Label>
-            <asp:Label ID="Label5" runat="server" CssClass="auto-style8" Text="Reason for Contact "></asp:Label>
-            <asp:RadioButton ID="RadioButton1" runat="server" CssClass="auto-style9" />
-            <asp:RadioButton ID="RadioButton2" runat="server" CssClass="auto-style10" />
+        <asp:Label ID="Label1" runat="server" CssClass="auto-style3" Text="Last Name" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933"></asp:Label>
+        <asp:Label ID="Label2" runat="server" CssClass="auto-style5" Text="First Name" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933"></asp:Label>
+        <asp:Label ID="Label3" runat="server" CssClass="auto-style4" Text="Email" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933"></asp:Label>
+            <asp:Label ID="Label4" runat="server" CssClass="auto-style7" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933" Text="Telephone"></asp:Label>
+            <asp:Label ID="Label5" runat="server" CssClass="auto-style8" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933" Text="Reason for Contact "></asp:Label>
+            <asp:RadioButton ID="RadioButton1" runat="server" CssClass="auto-style9" Font-Bold="False" Font-Names="Segoe UI" ForeColor="#009933" Text="Male" />
+            <asp:RadioButton ID="RadioButton2" runat="server" CssClass="auto-style10" Font-Bold="False" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933" Text="Female" />
+            <asp:Label ID="Label6" runat="server" CssClass="auto-style11" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="#009933" Text="Gender"></asp:Label>
+            <asp:Button ID="Button1" runat="server" BackColor="#33CC33" CssClass="auto-style12" Font-Bold="True" ForeColor="White" Text="Contact Us" />
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style13"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" CssClass="auto-style14" ></asp:TextBox>
+            <asp:TextBox ID="TextBox3" runat="server" CssClass="auto-style15"></asp:TextBox>
+            <asp:TextBox ID="TextBox4" runat="server" CssClass="auto-style16"></asp:TextBox>
+            <asp:TextBox ID="TextBox5" runat="server" CssClass="auto-style17"></asp:TextBox>
        </div>
     </form>
 </body>

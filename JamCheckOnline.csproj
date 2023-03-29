@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="ContactUs.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Login.aspx" />
     <Content Include="Page1.aspx" />
     <Content Include="Properties\audih.jpg" />
     <Content Include="Properties\bmwh.jpg" />
@@ -104,13 +103,6 @@
     </Compile>
     <Compile Include="JamCheck.Master.designer.cs">
       <DependentUpon>JamCheck.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page1.aspx.cs">
       <DependentUpon>Page1.aspx</DependentUpon>

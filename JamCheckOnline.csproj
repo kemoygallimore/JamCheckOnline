@@ -80,11 +80,12 @@
     <Content Include="Properties\mercedesh.jpg" />
     <Content Include="Properties\Mitsubishi.jpg" />
     <Content Include="Properties\nissangtrh.jpg" />
+    <Content Include="Properties\phone mockup with reports.jpg" />
     <Content Include="Properties\rav4h.jpg" />
     <Content Include="Properties\servicebg.jpeg" />
     <Content Include="Web.config" />
     <Content Include="Home.aspx" />
-    <None Include="Login" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactUs.aspx.cs">
@@ -120,11 +121,11 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>Login</DependentUpon>
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>Login</DependentUpon>
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

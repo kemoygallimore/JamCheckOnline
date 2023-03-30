@@ -7,109 +7,83 @@
     <title></title>
     
     <style type="text/css">
-
-      
-        .auto-style2 {
-            width: 1265px;
-            height: 191px;
-            position: absolute;
-            top: 15px;
-            left: 10px;
+        *{
+            margin:0px;
         }
-        .auto-style3 {
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            z-index: 1;
-            width: 162px;
-            height: 100px;
-        }
-        .auto-style4 {
-            width: 1099px;
-            height: 44px;
-            position: absolute;
-            top: 23px;
-            left: 167px;
-            z-index: 1;
-        }
-        .auto-style5 {
-           width: 1262px;
-            height: 187px;
-            position: absolute;
-            top: 788px;
-            left: 11px;
-            z-index: 1;
-            margin-top: 0px;
-        }
-        .auto-style6 {
-            font-family: 'Segoe UI';
-            position: absolute;
-            top: -7px;
-            left: 852px;
-            z-index: 1;
-            width: 252px;
-            height: 25px;
-            margin-top: 8px;
-        }
+        .container{
+            width:1140px;
+            margin:0 auto;
+        }   
+        
         .auto-style7 {
-            position: absolute;
-            top: 0px;
-            left: 1112px;
-            z-index: 1;
+            
             width: 148px;
             height: 32px;
         }
         .auto-style8 {
             margin-left: 2px;
         }
+        .green_color{
+            background:#00CC00;
+        }
+        .masterimage{
+             Height:125px;
+             Width:250px;
+             margin-bottom:-4px;
+        }
+        .space_between{
+            display:flex;
+            justify-content:space-between;
+        }
+        .center-items{
+            display:flex;
+            align-items:center;
+        }
         </style>
 </head>
-<body style="height: 861px; margin-top: 119px">
+<body style="min-height:100vh">
     <form id="form1" runat="server">
-<div>
         <div>
-                   
-                <asp:Panel ID="Panel1" runat="server" BackColor="#00CC00" Height="98px" CssClass="auto-style2" style="z-index: 1">
-                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" CssClass="auto-style3" />
-                                                           
-                    <asp:Panel ID="Panel3" runat="server" CssClass="auto-style4">
-
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
-                            <Items>
-                                <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
-                                <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
-                                <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue"></asp:MenuItem>
-                                <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
-                                <asp:MenuItem Text="FAQ's" Value="FAQ's"></asp:MenuItem>
-                                <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
-                                <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
-                            </Items>
-                            <StaticHoverStyle ForeColor="Yellow" />
-                            <StaticMenuItemStyle BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Height="40px" ItemSpacing="5px" Width="150px" />
-                        </asp:Menu>
-
-                    </asp:Panel>
-                                                           
-                </asp:Panel>
-             <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-
-        <div class="auto-style5">
-            <footer>
-
-                <asp:Panel ID="Panel4" runat="server" Height="57px" CssClass="auto-style8">
-                    <h2 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"> Subcribe for more from JAMCHECK<asp:TextBox ID="TextBox1" runat="server" BackColor="#FFFF66" BorderStyle="Solid" CssClass="auto-style6" ></asp:TextBox>
-                        <asp:Button ID="Button1" runat="server" CssClass="auto-style7" EnableTheming="False" Font-Bold="True" Font-Names="Segoe UI" Text="Subcribe" />
-                    </h2>
-                </asp:Panel>
-
+            <div class="green_color space_between center-items">
+                <div>
+                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" Cssclass="masterimage" />
+                </div>
+                <div>
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                        <Items>
+                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                            <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue"></asp:MenuItem>
+                            <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
+                            <asp:MenuItem Text="FAQ's" Value="FAQ's"></asp:MenuItem>
+                            <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
+                            <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle ForeColor="Yellow" />
+                        <StaticMenuItemStyle BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Height="40px" ItemSpacing="5px" Width="150px"/>
+                    </asp:Menu>
+                </div>
+            </div>
             
-            <asp:Panel ID="Panel5" runat="server" Height="125px" BackColor="#00CC00">
-                <asp:Image ID="Image2" runat="server" Height="125px" ImageUrl="~/Properties/logo.png" Width="250px" />
-            </asp:Panel>
-                </footer>
-        </div>
+                    <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+            <footer>                
+                <div class="container space_between">
+                    <div>
+                        <strong>
+                            <span style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:1.5em"> Subcribe for more from JAMCHECK</span>
+                        </strong>
+                    </div>
+
+                    <div>
+                        <asp:TextBox ID="TextBox1" runat="server" BackColor="#FFFF66" BorderStyle="Solid" Height="26px" Width="200px" ></asp:TextBox>
+                        <asp:Button ID="Button1" runat="server" CssClass="auto-style7" EnableTheming="False" Font-Bold="True" Font-Names="Segoe UI" Text="Subcribe" />
+                    </div>
+                </div>
+                <div class="green_color">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Properties/logo.png"  Cssclass="masterimage" />
+                </div>
+            </footer>
         </div>
     </form>
 </body>

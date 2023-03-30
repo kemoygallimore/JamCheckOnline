@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace MyfirstWebApplication1
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,11 +16,6 @@ namespace MyfirstWebApplication1
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
         {
-
-        }
-
-        protected void LoginButton_Click(object sender, EventArgs e)
-        {
             if (Login1.UserName == "admin" && Login1.Password == "1234")
             {
                 Login1.Visible = false;
@@ -28,8 +23,10 @@ namespace MyfirstWebApplication1
             }
             else
             {
-                Login1.FailureText ="Invalid Name and Passwrod";
+                Login1.FailureText = "Invalid Name and Passwrod";
+
             }
+
         }
     }
 }

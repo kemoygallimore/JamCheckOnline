@@ -13,6 +13,7 @@
          }
          .container{
 
+<<<<<<< HEAD
          }
      </style>
         <div class="container">
@@ -49,6 +50,10 @@
      <!--
     <div class="container">
      <asp:Panel ID="Panel6" runat="server" Height="661px" BackColor="#FFFF66" BorderStyle="None" Width="1266px">
+=======
+     <div style= "margin:auto">
+     <asp:Panel ID="Panel6" runat="server" Height="661px" BackColor="#FFFF66" BorderStyle="None" style="margin-left: 0px; margin-right: 13px;" Width="1266px">
+>>>>>>> 2166863f4ba68da48296300b366799b9eecab170
          <asp:Image ID="Image4" runat="server" style="z-index: 1; position: absolute; top: 111px; left: 132px; height: 361px;" Width="523px" ImageUrl="~/Properties/istockphoto-1370432521-170667a-removebg-preview (1).png" />
          <asp:Panel ID="Panel7" runat="server" style="z-index: 1; width: 1267px; height: 311px; position: absolute; top: 472px; left: 8px" BackColor="White">
              <asp:Image ID="Image5" runat="server" ImageUrl="~/Properties/Collection flash icon smartphone with the blank white screen.jpg" style="z-index: 1; position: absolute; top: 1px; left: 706px; width: 445px; height: 305px;" />

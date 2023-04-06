@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JamCheck.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="MyfirstWebApplication1.WebForm3" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" contentplaceholderID="ContentPlaceHolder1" runat="server">
     <style>
         .centeritem{
             display:flex;
@@ -15,7 +15,7 @@
     
     <div class="container">
         <div class="centeritem py-4">
-            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em">
+            <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F6F3" BorderColor="#E6E2D8" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="0.8em" OnCreatedUser="CreateUserWizard1_CreatedUser">
         <ContinueButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
         <CreateUserButtonStyle BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#284775" />
         <TitleTextStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -38,7 +38,7 @@
                                 <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName" Font-Size="12pt">User Name:</asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="UserName" runat="server" Font-Size="12pt"></asp:TextBox>
+                                <asp:TextBox ID="UserName" runat="server" Font-Size="12pt" OnTextChanged="UserName_TextChanged"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
@@ -164,6 +164,21 @@
                 </ContentTemplate>
             </asp:CreateUserWizardStep>
             <asp:CompleteWizardStep ID="CompleteWizardStep1" runat="server">
+                <ContentTemplate>
+                    <table style="font-family:Verdana;font-size:100%;">
+                        <tr>
+                            <td align="center" colspan="2" style="color:White;background-color:#5D7B9D;font-weight:bold;">Complete</td>
+                        </tr>
+                        <tr>
+                            <td>Your account has been successfully created.</td>
+                        </tr>
+                        <tr>
+                            <td align="right" colspan="2">
+                                <asp:Button ID="ContinueButton" runat="server" BackColor="#FFFBFF" BorderColor="#CCCCCC" BorderStyle="Solid" BorderWidth="1px" CausesValidation="False" CommandName="Continue" Font-Names="Verdana" ForeColor="#284775" Text="Continue" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                    </table>
+                </ContentTemplate>
             </asp:CompleteWizardStep>
         </WizardSteps>
         <HeaderStyle BackColor="#5D7B9D" BorderStyle="Solid" Font-Bold="True" Font-Size="0.9em" ForeColor="White" HorizontalAlign="Center" />

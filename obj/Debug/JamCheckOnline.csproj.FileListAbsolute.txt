@@ -175,3 +175,7 @@ C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\obj\Debug\JamCheckOnli
 C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\obj\Debug\JamCheckOnline.csproj.CopyComplete
 C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\obj\Debug\MyfirstWebApplication1.dll
 C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\obj\Debug\MyfirstWebApplication1.pdb
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\EntityFramework.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\EntityFramework.SqlServer.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\EntityFramework.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\EntityFramework.SqlServer.xml

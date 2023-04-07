@@ -1,0 +1,949 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Dealerships">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="tel" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" />
+          <Property Name="parishid" Type="int" />
+        </EntityType>
+        <EntityType Name="Fuel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ImportFrom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Make">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Org">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="parishes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleType" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SteeringPosition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TransmissionType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="lname" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="companyid" Type="int" Nullable="false" />
+          <Property Name="roletypeid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="makeid" Type="int" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="fuelid" Type="int" Nullable="false" />
+          <Property Name="ChassisNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="VinNum" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Mileage" Type="int" Nullable="false" />
+          <Property Name="Seating" Type="int" Nullable="false" />
+          <Property Name="steeringid" Type="int" Nullable="false" />
+          <Property Name="bodytypeid" Type="int" Nullable="false" />
+          <Property Name="transmissionid" Type="int" Nullable="false" />
+          <Property Name="ImportfromID" Type="int" Nullable="false" />
+          <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImportDate" Type="date" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.UserInfoes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserInfoes">
+          <Key>
+            <PropertyRef Name="First Name" />
+            <PropertyRef Name="Last Name" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="First Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="20" />
+          <Property Name="Company" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.ViewDealerships' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewDealerships">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Telephone" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Telephone" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" />
+          <Property Name="Parish" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewVehicles">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Picture" />
+            <PropertyRef Name="Make" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Fuel" />
+            <PropertyRef Name="ChassisNo" />
+            <PropertyRef Name="VIN" />
+            <PropertyRef Name="year" />
+            <PropertyRef Name="Mileage" />
+            <PropertyRef Name="Seating" />
+            <PropertyRef Name="Steering" />
+            <PropertyRef Name="BodyType" />
+            <PropertyRef Name="Transmission" />
+            <PropertyRef Name="ImportFrom" />
+            <PropertyRef Name="Importer" />
+            <PropertyRef Name="ImportDate" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Picture" Type="varbinary(max)" Nullable="false" />
+          <Property Name="Make" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Fuel" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ChassisNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="year" Type="int" Nullable="false" />
+          <Property Name="Mileage" Type="int" Nullable="false" />
+          <Property Name="Seating" Type="int" Nullable="false" />
+          <Property Name="Steering" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="BodyType" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Transmission" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ImportFrom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ImportDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Dealershi__paris__619B8048">
+          <End Role="parishes" Type="Self.parishes" Multiplicity="0..1" />
+          <End Role="Dealerships" Type="Self.Dealerships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parishes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dealerships">
+              <PropertyRef Name="parishid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__companyid__628FA481">
+          <End Role="Org" Type="Self.Org" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="companyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__roletypei__6383C8BA">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="roletypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__bodyty__5165187F">
+          <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="bodytypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__fuelid__52593CB8">
+          <End Role="Fuel" Type="Self.Fuel" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fuel">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="fuelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__Import__534D60F1">
+          <End Role="ImportFrom" Type="Self.ImportFrom" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFrom">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="ImportfromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__makeid__5441852A">
+          <End Role="Make" Type="Self.Make" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Make">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="makeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__steeri__5535A963">
+          <End Role="SteeringPosition" Type="Self.SteeringPosition" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SteeringPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="steeringid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__transm__5629CD9C">
+          <End Role="TransmissionType" Type="Self.TransmissionType" Multiplicity="1" />
+          <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransmissionType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="transmissionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="jampracticeModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Make" EntityType="Self.Make" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Org" EntityType="Self.Org" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="parishes" EntityType="Self.parishes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SteeringPosition" EntityType="Self.SteeringPosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserInfoes" EntityType="Self.UserInfoes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserInfoes].[First Name] AS [First Name], 
+    [UserInfoes].[Last Name] AS [Last Name], 
+    [UserInfoes].[Username] AS [Username], 
+    [UserInfoes].[Email] AS [Email], 
+    [UserInfoes].[Password] AS [Password], 
+    [UserInfoes].[Role] AS [Role], 
+    [UserInfoes].[Company] AS [Company]
+    FROM [dbo].[UserInfoes] AS [UserInfoes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewDealerships" EntityType="Self.ViewDealerships" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewDealerships].[Name] AS [Name], 
+    [ViewDealerships].[Telephone] AS [Telephone], 
+    [ViewDealerships].[Address] AS [Address], 
+    [ViewDealerships].[Parish] AS [Parish]
+    FROM [dbo].[ViewDealerships] AS [ViewDealerships]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewVehicles" EntityType="Self.ViewVehicles" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewVehicles].[id] AS [id], 
+    [ViewVehicles].[Picture] AS [Picture], 
+    [ViewVehicles].[Make] AS [Make], 
+    [ViewVehicles].[Model] AS [Model], 
+    [ViewVehicles].[Fuel] AS [Fuel], 
+    [ViewVehicles].[ChassisNo] AS [ChassisNo], 
+    [ViewVehicles].[VIN] AS [VIN], 
+    [ViewVehicles].[year] AS [year], 
+    [ViewVehicles].[Mileage] AS [Mileage], 
+    [ViewVehicles].[Seating] AS [Seating], 
+    [ViewVehicles].[Steering] AS [Steering], 
+    [ViewVehicles].[BodyType] AS [BodyType], 
+    [ViewVehicles].[Transmission] AS [Transmission], 
+    [ViewVehicles].[ImportFrom] AS [ImportFrom], 
+    [ViewVehicles].[Importer] AS [Importer], 
+    [ViewVehicles].[ImportDate] AS [ImportDate]
+    FROM [dbo].[ViewVehicles] AS [ViewVehicles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="Self.FK__Dealershi__paris__619B8048">
+            <End Role="parishes" EntitySet="parishes" />
+            <End Role="Dealerships" EntitySet="Dealerships" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__companyid__628FA481" Association="Self.FK__users__companyid__628FA481">
+            <End Role="Org" EntitySet="Org" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="Self.FK__users__roletypei__6383C8BA">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__bodyty__5165187F" Association="Self.FK__Vehicles__bodyty__5165187F">
+            <End Role="VehicleType" EntitySet="VehicleType" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__fuelid__52593CB8" Association="Self.FK__Vehicles__fuelid__52593CB8">
+            <End Role="Fuel" EntitySet="Fuel" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__Import__534D60F1" Association="Self.FK__Vehicles__Import__534D60F1">
+            <End Role="ImportFrom" EntitySet="ImportFrom" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__makeid__5441852A" Association="Self.FK__Vehicles__makeid__5441852A">
+            <End Role="Make" EntitySet="Make" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__steeri__5535A963" Association="Self.FK__Vehicles__steeri__5535A963">
+            <End Role="SteeringPosition" EntitySet="SteeringPosition" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__transm__5629CD9C" Association="Self.FK__Vehicles__transm__5629CD9C">
+            <End Role="TransmissionType" EntitySet="TransmissionType" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="jampracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="jamcheckEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="jampracticeModel.Customers" />
+          <EntitySet Name="Dealerships" EntityType="jampracticeModel.Dealerships" />
+          <EntitySet Name="Fuel" EntityType="jampracticeModel.Fuel" />
+          <EntitySet Name="ImportFrom" EntityType="jampracticeModel.ImportFrom" />
+          <EntitySet Name="Make" EntityType="jampracticeModel.Make" />
+          <EntitySet Name="Org" EntityType="jampracticeModel.Org" />
+          <EntitySet Name="parishes" EntityType="jampracticeModel.parishes" />
+          <EntitySet Name="Roles" EntityType="jampracticeModel.Roles" />
+          <EntitySet Name="SteeringPosition" EntityType="jampracticeModel.SteeringPosition" />
+          <EntitySet Name="TransmissionType" EntityType="jampracticeModel.TransmissionType" />
+          <EntitySet Name="users" EntityType="jampracticeModel.users" />
+          <EntitySet Name="Vehicles" EntityType="jampracticeModel.Vehicles" />
+          <EntitySet Name="VehicleType" EntityType="jampracticeModel.VehicleType" />
+          <EntitySet Name="UserInfoes" EntityType="jampracticeModel.UserInfoes" />
+          <EntitySet Name="ViewDealerships" EntityType="jampracticeModel.ViewDealerships" />
+          <EntitySet Name="ViewVehicles" EntityType="jampracticeModel.ViewVehicles" />
+          <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="jampracticeModel.FK__Dealershi__paris__619B8048">
+            <End Role="parishes" EntitySet="parishes" />
+            <End Role="Dealerships" EntitySet="Dealerships" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__fuelid__52593CB8" Association="jampracticeModel.FK__Vehicles__fuelid__52593CB8">
+            <End Role="Fuel" EntitySet="Fuel" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__Import__534D60F1" Association="jampracticeModel.FK__Vehicles__Import__534D60F1">
+            <End Role="ImportFrom" EntitySet="ImportFrom" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__makeid__5441852A" Association="jampracticeModel.FK__Vehicles__makeid__5441852A">
+            <End Role="Make" EntitySet="Make" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__companyid__628FA481" Association="jampracticeModel.FK__users__companyid__628FA481">
+            <End Role="Org" EntitySet="Org" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="jampracticeModel.FK__users__roletypei__6383C8BA">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="users" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__steeri__5535A963" Association="jampracticeModel.FK__Vehicles__steeri__5535A963">
+            <End Role="SteeringPosition" EntitySet="SteeringPosition" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__transm__5629CD9C" Association="jampracticeModel.FK__Vehicles__transm__5629CD9C">
+            <End Role="TransmissionType" EntitySet="TransmissionType" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vehicles__bodyty__5165187F" Association="jampracticeModel.FK__Vehicles__bodyty__5165187F">
+            <End Role="VehicleType" EntitySet="VehicleType" />
+            <End Role="Vehicles" EntitySet="Vehicles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Dealerships">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="tel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="parishid" Type="Int32" />
+          <NavigationProperty Name="parishes" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="Dealerships" ToRole="parishes" />
+        </EntityType>
+        <EntityType Name="Fuel">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__fuelid__52593CB8" FromRole="Fuel" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="ImportFrom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__Import__534D60F1" FromRole="ImportFrom" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="Make">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__makeid__5441852A" FromRole="Make" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="Org">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="Org" ToRole="users" />
+        </EntityType>
+        <EntityType Name="parishes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="parishes" ToRole="Dealerships" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="Roles" ToRole="users" />
+        </EntityType>
+        <EntityType Name="SteeringPosition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__steeri__5535A963" FromRole="SteeringPosition" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="TransmissionType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__transm__5629CD9C" FromRole="TransmissionType" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="lname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="companyid" Type="Int32" Nullable="false" />
+          <Property Name="roletypeid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Org" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="users" ToRole="Org" />
+          <NavigationProperty Name="Roles" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="users" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="Vehicles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="makeid" Type="Int32" Nullable="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="fuelid" Type="Int32" Nullable="false" />
+          <Property Name="ChassisNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VinNum" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mileage" Type="Int32" Nullable="false" />
+          <Property Name="Seating" Type="Int32" Nullable="false" />
+          <Property Name="steeringid" Type="Int32" Nullable="false" />
+          <Property Name="bodytypeid" Type="Int32" Nullable="false" />
+          <Property Name="transmissionid" Type="Int32" Nullable="false" />
+          <Property Name="ImportfromID" Type="Int32" Nullable="false" />
+          <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Fuel" Relationship="jampracticeModel.FK__Vehicles__fuelid__52593CB8" FromRole="Vehicles" ToRole="Fuel" />
+          <NavigationProperty Name="ImportFrom" Relationship="jampracticeModel.FK__Vehicles__Import__534D60F1" FromRole="Vehicles" ToRole="ImportFrom" />
+          <NavigationProperty Name="Make" Relationship="jampracticeModel.FK__Vehicles__makeid__5441852A" FromRole="Vehicles" ToRole="Make" />
+          <NavigationProperty Name="SteeringPosition" Relationship="jampracticeModel.FK__Vehicles__steeri__5535A963" FromRole="Vehicles" ToRole="SteeringPosition" />
+          <NavigationProperty Name="TransmissionType" Relationship="jampracticeModel.FK__Vehicles__transm__5629CD9C" FromRole="Vehicles" ToRole="TransmissionType" />
+          <NavigationProperty Name="VehicleType" Relationship="jampracticeModel.FK__Vehicles__bodyty__5165187F" FromRole="Vehicles" ToRole="VehicleType" />
+        </EntityType>
+        <EntityType Name="VehicleType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vehicles" Relationship="jampracticeModel.FK__Vehicles__bodyty__5165187F" FromRole="VehicleType" ToRole="Vehicles" />
+        </EntityType>
+        <EntityType Name="UserInfoes">
+          <Key>
+            <PropertyRef Name="First_Name" />
+            <PropertyRef Name="Last_Name" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Password" />
+          </Key>
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Company" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewDealerships">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Telephone" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Parish" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewVehicles">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Picture" />
+            <PropertyRef Name="Make" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Fuel" />
+            <PropertyRef Name="ChassisNo" />
+            <PropertyRef Name="VIN" />
+            <PropertyRef Name="year" />
+            <PropertyRef Name="Mileage" />
+            <PropertyRef Name="Seating" />
+            <PropertyRef Name="Steering" />
+            <PropertyRef Name="BodyType" />
+            <PropertyRef Name="Transmission" />
+            <PropertyRef Name="ImportFrom" />
+            <PropertyRef Name="Importer" />
+            <PropertyRef Name="ImportDate" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Make" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Fuel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ChassisNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VIN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <Property Name="Mileage" Type="Int32" Nullable="false" />
+          <Property Name="Seating" Type="Int32" Nullable="false" />
+          <Property Name="Steering" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="BodyType" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Transmission" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ImportFrom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="FK__Dealershi__paris__619B8048">
+          <End Type="jampracticeModel.parishes" Role="parishes" Multiplicity="0..1" />
+          <End Type="jampracticeModel.Dealerships" Role="Dealerships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="parishes">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Dealerships">
+              <PropertyRef Name="parishid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__fuelid__52593CB8">
+          <End Type="jampracticeModel.Fuel" Role="Fuel" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fuel">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="fuelid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__Import__534D60F1">
+          <End Type="jampracticeModel.ImportFrom" Role="ImportFrom" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImportFrom">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="ImportfromID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__makeid__5441852A">
+          <End Type="jampracticeModel.Make" Role="Make" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Make">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="makeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__companyid__628FA481">
+          <End Type="jampracticeModel.Org" Role="Org" Multiplicity="1" />
+          <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Org">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="companyid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__users__roletypei__6383C8BA">
+          <End Type="jampracticeModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="roletypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__steeri__5535A963">
+          <End Type="jampracticeModel.SteeringPosition" Role="SteeringPosition" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SteeringPosition">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="steeringid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__transm__5629CD9C">
+          <End Type="jampracticeModel.TransmissionType" Role="TransmissionType" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransmissionType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="transmissionid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vehicles__bodyty__5165187F">
+          <End Type="jampracticeModel.VehicleType" Role="VehicleType" Multiplicity="1" />
+          <End Type="jampracticeModel.Vehicles" Role="Vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VehicleType">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Vehicles">
+              <PropertyRef Name="bodytypeid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="jamcheckEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="jampracticeModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dealerships">
+            <EntityTypeMapping TypeName="jampracticeModel.Dealerships">
+              <MappingFragment StoreEntitySet="Dealerships">
+                <ScalarProperty Name="parishid" ColumnName="parishid" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fuel">
+            <EntityTypeMapping TypeName="jampracticeModel.Fuel">
+              <MappingFragment StoreEntitySet="Fuel">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportFrom">
+            <EntityTypeMapping TypeName="jampracticeModel.ImportFrom">
+              <MappingFragment StoreEntitySet="ImportFrom">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Make">
+            <EntityTypeMapping TypeName="jampracticeModel.Make">
+              <MappingFragment StoreEntitySet="Make">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Org">
+            <EntityTypeMapping TypeName="jampracticeModel.Org">
+              <MappingFragment StoreEntitySet="Org">
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="parishes">
+            <EntityTypeMapping TypeName="jampracticeModel.parishes">
+              <MappingFragment StoreEntitySet="parishes">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="jampracticeModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleType" ColumnName="RoleType" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SteeringPosition">
+            <EntityTypeMapping TypeName="jampracticeModel.SteeringPosition">
+              <MappingFragment StoreEntitySet="SteeringPosition">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransmissionType">
+            <EntityTypeMapping TypeName="jampracticeModel.TransmissionType">
+              <MappingFragment StoreEntitySet="TransmissionType">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="jampracticeModel.users">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="roletypeid" ColumnName="roletypeid" />
+                <ScalarProperty Name="companyid" ColumnName="companyid" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="jampracticeModel.Vehicles">
+              <MappingFragment StoreEntitySet="Vehicles">
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="Importer" ColumnName="Importer" />
+                <ScalarProperty Name="ImportfromID" ColumnName="ImportfromID" />
+                <ScalarProperty Name="transmissionid" ColumnName="transmissionid" />
+                <ScalarProperty Name="bodytypeid" ColumnName="bodytypeid" />
+                <ScalarProperty Name="steeringid" ColumnName="steeringid" />
+                <ScalarProperty Name="Seating" ColumnName="Seating" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="VinNum" ColumnName="VinNum" />
+                <ScalarProperty Name="ChassisNo" ColumnName="ChassisNo" />
+                <ScalarProperty Name="fuelid" ColumnName="fuelid" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="makeid" ColumnName="makeid" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehicleType">
+            <EntityTypeMapping TypeName="jampracticeModel.VehicleType">
+              <MappingFragment StoreEntitySet="VehicleType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfoes">
+            <EntityTypeMapping TypeName="jampracticeModel.UserInfoes">
+              <MappingFragment StoreEntitySet="UserInfoes">
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewDealerships">
+            <EntityTypeMapping TypeName="jampracticeModel.ViewDealerships">
+              <MappingFragment StoreEntitySet="ViewDealerships">
+                <ScalarProperty Name="Parish" ColumnName="Parish" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewVehicles">
+            <EntityTypeMapping TypeName="jampracticeModel.ViewVehicles">
+              <MappingFragment StoreEntitySet="ViewVehicles">
+                <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+                <ScalarProperty Name="Importer" ColumnName="Importer" />
+                <ScalarProperty Name="ImportFrom" ColumnName="ImportFrom" />
+                <ScalarProperty Name="Transmission" ColumnName="Transmission" />
+                <ScalarProperty Name="BodyType" ColumnName="BodyType" />
+                <ScalarProperty Name="Steering" ColumnName="Steering" />
+                <ScalarProperty Name="Seating" ColumnName="Seating" />
+                <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="ChassisNo" ColumnName="ChassisNo" />
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

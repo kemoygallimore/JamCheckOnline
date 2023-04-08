@@ -7,29 +7,33 @@ using System.Web.UI.WebControls;
 
 namespace MyfirstWebApplication1
 {
-    
     public partial class WebForm3 : System.Web.UI.Page
     {
-        private readonly jamcheckEntities jamdb = new jamcheckEntities();
+        JamCheckEntities jamdb = new JamCheckEntities();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            RangeValidator1.MaximumValue = DateTime.Now.AddYears(-18).ToString("d");
+            RangeValidator1.MinimumValue = DateTime.Now.AddYears(-100).ToString("d");
         }
 
-        protected void UserName_TextChanged(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            Panel1.Visible = false;
+            var user = new customers();
+            user.FirstName = fnametxtbx.Text;
+            user.LastName = lnametxtbx.Text;
+            user.TRN = TRNtxtbx.Text;
+            user.DOB = Convert.ToDateTime( DOBtxtbx.Text);
+            user.Email = Eamiltxtbx.Text;
+            user.CustPassword = Passwordtxtbx.Text;
 
-        }
-
-        protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
-        {
-            var cust = new Customers();
-            cust.username = CreateUserWizard1.UserName;
-
-
-
-            jamdb.Customers.Add(cust);
+            jamdb.customers.Add(user);
             jamdb.SaveChanges();
+
+
+            ConfirmationScreen.Visible = true;
         }
+
     }
 }

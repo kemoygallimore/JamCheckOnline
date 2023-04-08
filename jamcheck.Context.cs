@@ -13,10 +13,10 @@ namespace MyfirstWebApplication1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class jamcheckEntities : DbContext
+    public partial class JamCheckEntities : DbContext
     {
-        public jamcheckEntities()
-            : base("name=jamcheckEntities")
+        public JamCheckEntities()
+            : base("name=JamCheckEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace MyfirstWebApplication1
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<customers> customers { get; set; }
         public virtual DbSet<Dealerships> Dealerships { get; set; }
         public virtual DbSet<Fuel> Fuel { get; set; }
         public virtual DbSet<ImportFrom> ImportFrom { get; set; }

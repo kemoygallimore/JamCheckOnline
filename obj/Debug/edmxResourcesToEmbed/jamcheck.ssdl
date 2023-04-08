@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="Customers">
+  <EntityType Name="customers">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="username" Type="nvarchar" MaxLength="20" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TRN" Type="nvarchar" MaxLength="9" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CustPassword" Type="nvarchar" MaxLength="15" Nullable="false" />
   </EntityType>
   <EntityType Name="Dealerships">
     <Key>
@@ -182,7 +189,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ImportDate" Type="date" Nullable="false" />
   </EntityType>
-  <Association Name="FK__Dealershi__paris__619B8048">
+  <Association Name="FK__Dealershi__paris__3C69FB99">
     <End Role="parishes" Type="Self.parishes" Multiplicity="0..1" />
     <End Role="Dealerships" Type="Self.Dealerships" Multiplicity="*" />
     <ReferentialConstraint>
@@ -194,7 +201,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__companyid__628FA481">
+  <Association Name="FK__users__companyid__3D5E1FD2">
     <End Role="Org" Type="Self.Org" Multiplicity="1" />
     <End Role="users" Type="Self.users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -206,7 +213,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__roletypei__6383C8BA">
+  <Association Name="FK__users__roletypei__3E52440B">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="users" Type="Self.users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -291,7 +298,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="jampracticeModelStoreContainer">
-    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
@@ -343,15 +350,15 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     [ViewVehicles].[ImportDate] AS [ImportDate]
     FROM [dbo].[ViewVehicles] AS [ViewVehicles]</DefiningQuery>
     </EntitySet>
-    <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="Self.FK__Dealershi__paris__619B8048">
+    <AssociationSet Name="FK__Dealershi__paris__3C69FB99" Association="Self.FK__Dealershi__paris__3C69FB99">
       <End Role="parishes" EntitySet="parishes" />
       <End Role="Dealerships" EntitySet="Dealerships" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__companyid__628FA481" Association="Self.FK__users__companyid__628FA481">
+    <AssociationSet Name="FK__users__companyid__3D5E1FD2" Association="Self.FK__users__companyid__3D5E1FD2">
       <End Role="Org" EntitySet="Org" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="Self.FK__users__roletypei__6383C8BA">
+    <AssociationSet Name="FK__users__roletypei__3E52440B" Association="Self.FK__users__roletypei__3E52440B">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>

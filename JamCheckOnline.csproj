@@ -77,15 +77,15 @@
   <ItemGroup>
     <Content Include="ContactUs.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="jamcheck.Context.tt">
+    <Content Include="JamCheck.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>jamcheck.Context.cs</LastGenOutput>
-      <DependentUpon>jamcheck.edmx</DependentUpon>
+      <DependentUpon>JamCheck.edmx</DependentUpon>
+      <LastGenOutput>JamCheck.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="jamcheck.tt">
+    <Content Include="JamCheck.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>jamcheck.edmx</DependentUpon>
-      <LastGenOutput>jamcheck.cs</LastGenOutput>
+      <DependentUpon>JamCheck.edmx</DependentUpon>
+      <LastGenOutput>JamCheck.cs</LastGenOutput>
     </Content>
     <Content Include="Page1.aspx" />
     <Content Include="Properties\audih.jpg" />
@@ -105,6 +105,7 @@
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="Inventory.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContactUs.aspx.cs">
@@ -114,35 +115,35 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Customers.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+    <Compile Include="customers.cs">
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Dealerships.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Fuel.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="ImportFrom.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
-    <Compile Include="jamcheck.Context.cs">
+    <Compile Include="JamCheck.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>jamcheck.Context.tt</DependentUpon>
+      <DependentUpon>JamCheck.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="jamcheck.cs">
+    <Compile Include="JamCheck.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
-    <Compile Include="jamcheck.Designer.cs">
+    <Compile Include="JamCheck.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>jamcheck.edmx</DependentUpon>
+      <DependentUpon>JamCheck.edmx</DependentUpon>
     </Compile>
     <Compile Include="JamCheck.Master.cs">
       <DependentUpon>JamCheck.Master</DependentUpon>
@@ -152,10 +153,10 @@
       <DependentUpon>JamCheck.Master</DependentUpon>
     </Compile>
     <Compile Include="Make.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Org.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Page1.aspx.cs">
       <DependentUpon>Page1.aspx</DependentUpon>
@@ -165,7 +166,7 @@
       <DependentUpon>Page1.aspx</DependentUpon>
     </Compile>
     <Compile Include="parishes.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Home.aspx.cs">
@@ -176,31 +177,31 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="SteeringPosition.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="TransmissionType.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="UserInfoes.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="users.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Vehicles.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="VehicleType.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewDealerships.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewVehicles.cs">
-      <DependentUpon>jamcheck.tt</DependentUpon>
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -216,15 +217,22 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inventory.aspx.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory.aspx.designer.cs">
+      <DependentUpon>Inventory.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="JamCheck.Master" />
-    <EntityDeploy Include="jamcheck.edmx">
+    <EntityDeploy Include="JamCheck.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>jamcheck.Designer.cs</LastGenOutput>
+      <LastGenOutput>JamCheck.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="jamcheck.edmx.diagram">
-      <DependentUpon>jamcheck.edmx</DependentUpon>
+    <Content Include="JamCheck.edmx.diagram">
+      <DependentUpon>JamCheck.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

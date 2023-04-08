@@ -5,12 +5,19 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Customers">
+        <EntityType Name="customers">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="nvarchar" MaxLength="20" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TRN" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="CustPassword" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityType Name="Dealerships">
           <Key>
@@ -187,7 +194,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="ImportDate" Type="date" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Dealershi__paris__619B8048">
+        <Association Name="FK__Dealershi__paris__3C69FB99">
           <End Role="parishes" Type="Self.parishes" Multiplicity="0..1" />
           <End Role="Dealerships" Type="Self.Dealerships" Multiplicity="*" />
           <ReferentialConstraint>
@@ -199,7 +206,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__users__companyid__628FA481">
+        <Association Name="FK__users__companyid__3D5E1FD2">
           <End Role="Org" Type="Self.Org" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -211,7 +218,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__users__roletypei__6383C8BA">
+        <Association Name="FK__users__roletypei__3E52440B">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -296,7 +303,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="jampracticeModelStoreContainer">
-          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
@@ -348,15 +355,15 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     [ViewVehicles].[ImportDate] AS [ImportDate]
     FROM [dbo].[ViewVehicles] AS [ViewVehicles]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="Self.FK__Dealershi__paris__619B8048">
+          <AssociationSet Name="FK__Dealershi__paris__3C69FB99" Association="Self.FK__Dealershi__paris__3C69FB99">
             <End Role="parishes" EntitySet="parishes" />
             <End Role="Dealerships" EntitySet="Dealerships" />
           </AssociationSet>
-          <AssociationSet Name="FK__users__companyid__628FA481" Association="Self.FK__users__companyid__628FA481">
+          <AssociationSet Name="FK__users__companyid__3D5E1FD2" Association="Self.FK__users__companyid__3D5E1FD2">
             <End Role="Org" EntitySet="Org" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
-          <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="Self.FK__users__roletypei__6383C8BA">
+          <AssociationSet Name="FK__users__roletypei__3E52440B" Association="Self.FK__users__roletypei__3E52440B">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
@@ -389,8 +396,8 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="jampracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="jamcheckEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Customers" EntityType="jampracticeModel.Customers" />
+        <EntityContainer Name="JamCheckEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="customers" EntityType="jampracticeModel.customers" />
           <EntitySet Name="Dealerships" EntityType="jampracticeModel.Dealerships" />
           <EntitySet Name="Fuel" EntityType="jampracticeModel.Fuel" />
           <EntitySet Name="ImportFrom" EntityType="jampracticeModel.ImportFrom" />
@@ -406,7 +413,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <EntitySet Name="UserInfoes" EntityType="jampracticeModel.UserInfoes" />
           <EntitySet Name="ViewDealerships" EntityType="jampracticeModel.ViewDealerships" />
           <EntitySet Name="ViewVehicles" EntityType="jampracticeModel.ViewVehicles" />
-          <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="jampracticeModel.FK__Dealershi__paris__619B8048">
+          <AssociationSet Name="FK__Dealershi__paris__3C69FB99" Association="jampracticeModel.FK__Dealershi__paris__3C69FB99">
             <End Role="parishes" EntitySet="parishes" />
             <End Role="Dealerships" EntitySet="Dealerships" />
           </AssociationSet>
@@ -422,11 +429,11 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             <End Role="Make" EntitySet="Make" />
             <End Role="Vehicles" EntitySet="Vehicles" />
           </AssociationSet>
-          <AssociationSet Name="FK__users__companyid__628FA481" Association="jampracticeModel.FK__users__companyid__628FA481">
+          <AssociationSet Name="FK__users__companyid__3D5E1FD2" Association="jampracticeModel.FK__users__companyid__3D5E1FD2">
             <End Role="Org" EntitySet="Org" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
-          <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="jampracticeModel.FK__users__roletypei__6383C8BA">
+          <AssociationSet Name="FK__users__roletypei__3E52440B" Association="jampracticeModel.FK__users__roletypei__3E52440B">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
@@ -443,12 +450,19 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             <End Role="Vehicles" EntitySet="Vehicles" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Customers">
+        <EntityType Name="customers">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRN" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CustPassword" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Dealerships">
           <Key>
@@ -459,7 +473,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <Property Name="tel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="parishid" Type="Int32" />
-          <NavigationProperty Name="parishes" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="Dealerships" ToRole="parishes" />
+          <NavigationProperty Name="parishes" Relationship="jampracticeModel.FK__Dealershi__paris__3C69FB99" FromRole="Dealerships" ToRole="parishes" />
         </EntityType>
         <EntityType Name="Fuel">
           <Key>
@@ -491,7 +505,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="company" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="Org" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__companyid__3D5E1FD2" FromRole="Org" ToRole="users" />
         </EntityType>
         <EntityType Name="parishes">
           <Key>
@@ -499,7 +513,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="parishes" ToRole="Dealerships" />
+          <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__3C69FB99" FromRole="parishes" ToRole="Dealerships" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -507,7 +521,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="Roles" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__roletypei__3E52440B" FromRole="Roles" ToRole="users" />
         </EntityType>
         <EntityType Name="SteeringPosition">
           <Key>
@@ -537,8 +551,8 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <Property Name="password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="companyid" Type="Int32" Nullable="false" />
           <Property Name="roletypeid" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Org" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="users" ToRole="Org" />
-          <NavigationProperty Name="Roles" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="users" ToRole="Roles" />
+          <NavigationProperty Name="Org" Relationship="jampracticeModel.FK__users__companyid__3D5E1FD2" FromRole="users" ToRole="Org" />
+          <NavigationProperty Name="Roles" Relationship="jampracticeModel.FK__users__roletypei__3E52440B" FromRole="users" ToRole="Roles" />
         </EntityType>
         <EntityType Name="Vehicles">
           <Key>
@@ -637,7 +651,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
-        <Association Name="FK__Dealershi__paris__619B8048">
+        <Association Name="FK__Dealershi__paris__3C69FB99">
           <End Type="jampracticeModel.parishes" Role="parishes" Multiplicity="0..1" />
           <End Type="jampracticeModel.Dealerships" Role="Dealerships" Multiplicity="*" />
           <ReferentialConstraint>
@@ -685,7 +699,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__users__companyid__628FA481">
+        <Association Name="FK__users__companyid__3D5E1FD2">
           <End Type="jampracticeModel.Org" Role="Org" Multiplicity="1" />
           <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -697,7 +711,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__users__roletypei__6383C8BA">
+        <Association Name="FK__users__roletypei__3E52440B">
           <End Type="jampracticeModel.Roles" Role="Roles" Multiplicity="1" />
           <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -750,11 +764,18 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="jamcheckEntities">
-          <EntitySetMapping Name="Customers">
-            <EntityTypeMapping TypeName="jampracticeModel.Customers">
-              <MappingFragment StoreEntitySet="Customers">
-                <ScalarProperty Name="username" ColumnName="username" />
+        <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="JamCheckEntities" >
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="jampracticeModel.customers">
+              <MappingFragment StoreEntitySet="customers">
+                <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="TRN" ColumnName="TRN" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

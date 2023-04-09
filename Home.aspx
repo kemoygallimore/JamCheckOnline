@@ -27,7 +27,7 @@
                 <div style="width:50%">
                 <asp:Label ID="Label7" runat="server" Font-Bold="True" Font-Names="Segoe UI" Font-Size="XX-Large"  Text="Need Detailed Car Info?"></asp:Label>
                 <asp:Label ID="Label8" runat="server" Font-Bold="False" Font-Names="Segoe UI" Font-Size="X-Large" style="width: 456px" Text="We'll provide the best information on your potential car, giving that peace of mind."></asp:Label><br />
-                <asp:Button ID="Button2" runat="server" BackColor="#00CC00" BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Text="Create an Account " /> 
+                <asp:Button ID="CreateAnAccountFromHompagebtn" runat="server" BackColor="#00CC00" BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Text="Create an Account " OnClick="CreateAnAccountFromHompagebtn_Click" /> 
                 </div>
 
             </div>
@@ -36,7 +36,7 @@
                 <div style="width:50%">
                     <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Segoe UI" Font-Size="XX-Large" Text="Need a Car Report?"></asp:Label><br />
                     <asp:Label ID="Label2" runat="server" Font-Bold="False" Font-Names="Segoe UI" Font-Size="X-Large" Text="We provide the most current and comprehensive car report of each car that enters the Jamaican borders."></asp:Label><br />
-                    <asp:Button ID="Button1" runat="server" BackColor="#00CC00" BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Text="Get a Report" />
+                    <asp:Button ID="Get_a_ReportFromHomepagebtn" runat="server" BackColor="#00CC00" BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Text="Get a Report" OnClick="Get_a_ReportFromHomepagebtn_Click" />
                 </div>
 
                 <div style="width:50%">

@@ -9,7 +9,7 @@ namespace MyfirstWebApplication1
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-        JamCheckEntities jamdb = new JamCheckEntities();
+        private readonly JamCheckEntities jamdb;
 
         protected void Page_Load(object sender, EventArgs e)
         {

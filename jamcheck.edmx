@@ -5,20 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="customers">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="TRN" Type="nvarchar" MaxLength="9" Nullable="false" />
-          <Property Name="DOB" Type="date" Nullable="false" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="CustPassword" Type="nvarchar" MaxLength="15" Nullable="false" />
-        </EntityType>
         <EntityType Name="Dealerships">
           <Key>
             <PropertyRef Name="id" />
@@ -63,6 +49,18 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+          <Property Name="TRN" Type="nvarchar" MaxLength="9" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="Email" Type="nvarchar" MaxLength="30" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="12" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -303,13 +301,13 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="jampracticeModelStoreContainer">
-          <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Make" EntityType="Self.Make" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Org" EntityType="Self.Org" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="parishes" EntityType="Self.parishes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="requests" EntityType="Self.requests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SteeringPosition" EntityType="Self.SteeringPosition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" Schema="dbo" store:Type="Tables" />
@@ -397,13 +395,13 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     <edmx:ConceptualModels>
       <Schema Namespace="jampracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="JamCheckEntities" annotation:LazyLoadingEnabled="true" >
-          <EntitySet Name="customers" EntityType="jampracticeModel.customers" />
           <EntitySet Name="Dealerships" EntityType="jampracticeModel.Dealerships" />
           <EntitySet Name="Fuel" EntityType="jampracticeModel.Fuel" />
           <EntitySet Name="ImportFrom" EntityType="jampracticeModel.ImportFrom" />
           <EntitySet Name="Make" EntityType="jampracticeModel.Make" />
           <EntitySet Name="Org" EntityType="jampracticeModel.Org" />
           <EntitySet Name="parishes" EntityType="jampracticeModel.parishes" />
+          <EntitySet Name="requests" EntityType="jampracticeModel.requests" />
           <EntitySet Name="Roles" EntityType="jampracticeModel.Roles" />
           <EntitySet Name="SteeringPosition" EntityType="jampracticeModel.SteeringPosition" />
           <EntitySet Name="TransmissionType" EntityType="jampracticeModel.TransmissionType" />
@@ -450,20 +448,6 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             <End Role="Vehicles" EntitySet="Vehicles" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="customers">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="TRN" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
-          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="CustPassword" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="Dealerships">
           <Key>
             <PropertyRef Name="id" />
@@ -514,6 +498,18 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__3C69FB99" FromRole="parishes" ToRole="Dealerships" />
+        </EntityType>
+        <EntityType Name="requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRN" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -759,27 +755,12 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="JamCheckEntities" >
-          <EntitySetMapping Name="customers">
-            <EntityTypeMapping TypeName="jampracticeModel.customers">
-              <MappingFragment StoreEntitySet="customers">
-                <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
-                <ScalarProperty Name="Username" ColumnName="Username" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="DOB" ColumnName="DOB" />
-                <ScalarProperty Name="TRN" ColumnName="TRN" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Dealerships">
             <EntityTypeMapping TypeName="jampracticeModel.Dealerships">
               <MappingFragment StoreEntitySet="Dealerships">
@@ -827,6 +808,19 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
             <EntityTypeMapping TypeName="jampracticeModel.parishes">
               <MappingFragment StoreEntitySet="parishes">
                 <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requests">
+            <EntityTypeMapping TypeName="jampracticeModel.requests">
+              <MappingFragment StoreEntitySet="requests">
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="TRN" ColumnName="TRN" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -115,9 +115,6 @@
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
-    <Compile Include="customers.cs">
-      <DependentUpon>JamCheck.tt</DependentUpon>
-    </Compile>
     <Compile Include="Dealerships.cs">
       <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
@@ -175,6 +172,9 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="requests.cs">
+      <DependentUpon>JamCheck.tt</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs">
       <DependentUpon>JamCheck.tt</DependentUpon>

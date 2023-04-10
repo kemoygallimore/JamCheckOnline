@@ -9,6 +9,7 @@ namespace MyfirstWebApplication1
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
+        //call the database to be loaded onto this page
         private readonly JamCheckEntities jamdb;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -19,19 +20,26 @@ namespace MyfirstWebApplication1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            //hides the registration form
             Panel1.Visible = false;
-            var user = new customers();
+            //creates an instance of the requests table
+            requests user = new requests();
+
+            //store the value from the textbox to each column of the user object
             user.FirstName = fnametxtbx.Text;
             user.LastName = lnametxtbx.Text;
             user.TRN = TRNtxtbx.Text;
             user.DOB = Convert.ToDateTime( DOBtxtbx.Text);
             user.Email = Eamiltxtbx.Text;
-            user.CustPassword = Passwordtxtbx.Text;
+            
 
-            jamdb.customers.Add(user);
+            //add an entry of the user object to the requests table in the database
+            jamdb.requests.Add(user);
+
+            //saves the changes. 
             jamdb.SaveChanges();
 
-
+            //This will show a confirmation screen after the details have been stored
             ConfirmationScreen.Visible = true;
         }
 

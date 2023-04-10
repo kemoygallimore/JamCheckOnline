@@ -12,16 +12,14 @@ namespace MyfirstWebApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class customers
+    public partial class requests
     {
         public int id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TRN { get; set; }
-        public System.DateTime DOB { get; set; }
-        public string PhoneNumber { get; set; }
+        public Nullable<System.DateTime> DOB { get; set; }
         public string Email { get; set; }
-        public string Username { get; set; }
-        public string CustPassword { get; set; }
+        public string Tel { get; set; }
     }
 }

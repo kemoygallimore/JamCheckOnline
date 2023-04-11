@@ -13,5 +13,16 @@ namespace MyfirstWebApplication1
         {
 
         }
+
+        protected void Get_a_ReportFromHomepagebtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inventory.aspx");
+        }
+
+        protected void CreateAnAccountFromHompagebtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+
+        }
     }
 }

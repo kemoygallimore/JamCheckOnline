@@ -39,6 +39,11 @@
             display:flex;
             align-items:center;
         }
+        .header_menu{
+            display:flex;
+            flex-direction:row;
+            column-gap:20px
+        }
         </style>
 </head>
 <body style="min-height:100vh">
@@ -48,19 +53,20 @@
                 <div>
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" Cssclass="masterimage" />
                 </div>
-                <div>
+                <div style="width:100%;display:flex;justify-content:end;padding-right:20px;">
                     <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                         <Items>
-                            <asp:MenuItem Text="Home" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
-                            <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue"></asp:MenuItem>
-                            <asp:MenuItem Text="About Us" Value="About Us"></asp:MenuItem>
-                            <asp:MenuItem Text="FAQ's" Value="FAQ's"></asp:MenuItem>
-                            <asp:MenuItem Text="Login" Value="Login"></asp:MenuItem>
-                            <asp:MenuItem Text="Sign Up" Value="Sign Up"></asp:MenuItem>
+                            <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue" NavigateUrl="~/Inventory.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="#"></asp:MenuItem>
+                            <asp:MenuItem Text="FAQ's" Value="FAQ's" ></asp:MenuItem>
+                            <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="Sign Up" Value="Sign Up" NavigateUrl="~/Register.aspx"></asp:MenuItem>
                         </Items>
                         <StaticHoverStyle ForeColor="Yellow" />
-                        <StaticMenuItemStyle BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Height="40px" ItemSpacing="5px" Width="150px"/>
+                        <StaticMenuItemStyle BorderStyle="None" Font-Bold="True" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Height="40px" ItemSpacing="5px" CssClass="menu"/>
+                        <StaticMenuStyle CssClass="header_menu" />
                     </asp:Menu>
                 </div>
             </div>
@@ -68,6 +74,8 @@
                     <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
             <footer>                
+                <div class="green_color center-items">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Properties/logo.png"  Cssclass="masterimage" />
                 <div class="container space_between">
                     <div>
                         <strong>
@@ -80,8 +88,7 @@
                         <asp:Button ID="Button1" runat="server" CssClass="auto-style7" EnableTheming="False" Font-Bold="True" Font-Names="Segoe UI" Text="Subcribe" />
                     </div>
                 </div>
-                <div class="green_color">
-                    <asp:Image ID="Image2" runat="server" ImageUrl="~/Properties/logo.png"  Cssclass="masterimage" />
+
                 </div>
             </footer>
         </div>

@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="jamcheckEntities">
-    <EntitySetMapping Name="Customers">
-      <EntityTypeMapping TypeName="jampracticeModel.Customers">
-        <MappingFragment StoreEntitySet="Customers">
-          <ScalarProperty Name="username" ColumnName="username" />
+  <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="JamCheckEntities">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="jampracticeModel.customers">
+        <MappingFragment StoreEntitySet="customers">
+          <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="TRN" ColumnName="TRN" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="jampracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityContainer Name="jamcheckEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Customers" EntityType="jampracticeModel.Customers" />
+  <EntityContainer Name="JamCheckEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customers" EntityType="jampracticeModel.customers" />
     <EntitySet Name="Dealerships" EntityType="jampracticeModel.Dealerships" />
     <EntitySet Name="Fuel" EntityType="jampracticeModel.Fuel" />
     <EntitySet Name="ImportFrom" EntityType="jampracticeModel.ImportFrom" />
@@ -17,7 +17,7 @@
     <EntitySet Name="UserInfoes" EntityType="jampracticeModel.UserInfoes" />
     <EntitySet Name="ViewDealerships" EntityType="jampracticeModel.ViewDealerships" />
     <EntitySet Name="ViewVehicles" EntityType="jampracticeModel.ViewVehicles" />
-    <AssociationSet Name="FK__Dealershi__paris__619B8048" Association="jampracticeModel.FK__Dealershi__paris__619B8048">
+    <AssociationSet Name="FK__Dealershi__paris__3C69FB99" Association="jampracticeModel.FK__Dealershi__paris__3C69FB99">
       <End Role="parishes" EntitySet="parishes" />
       <End Role="Dealerships" EntitySet="Dealerships" />
     </AssociationSet>
@@ -33,11 +33,11 @@
       <End Role="Make" EntitySet="Make" />
       <End Role="Vehicles" EntitySet="Vehicles" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__companyid__628FA481" Association="jampracticeModel.FK__users__companyid__628FA481">
+    <AssociationSet Name="FK__users__companyid__3D5E1FD2" Association="jampracticeModel.FK__users__companyid__3D5E1FD2">
       <End Role="Org" EntitySet="Org" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
-    <AssociationSet Name="FK__users__roletypei__6383C8BA" Association="jampracticeModel.FK__users__roletypei__6383C8BA">
+    <AssociationSet Name="FK__users__roletypei__3E52440B" Association="jampracticeModel.FK__users__roletypei__3E52440B">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="users" EntitySet="users" />
     </AssociationSet>
@@ -54,12 +54,19 @@
       <End Role="Vehicles" EntitySet="Vehicles" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Customers">
+  <EntityType Name="customers">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TRN" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CustPassword" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Dealerships">
     <Key>
@@ -70,7 +77,7 @@
     <Property Name="tel" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="parishid" Type="Int32" />
-    <NavigationProperty Name="parishes" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="Dealerships" ToRole="parishes" />
+    <NavigationProperty Name="parishes" Relationship="jampracticeModel.FK__Dealershi__paris__3C69FB99" FromRole="Dealerships" ToRole="parishes" />
   </EntityType>
   <EntityType Name="Fuel">
     <Key>
@@ -102,7 +109,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="company" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="Org" ToRole="users" />
+    <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__companyid__3D5E1FD2" FromRole="Org" ToRole="users" />
   </EntityType>
   <EntityType Name="parishes">
     <Key>
@@ -110,7 +117,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__619B8048" FromRole="parishes" ToRole="Dealerships" />
+    <NavigationProperty Name="Dealerships" Relationship="jampracticeModel.FK__Dealershi__paris__3C69FB99" FromRole="parishes" ToRole="Dealerships" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -118,7 +125,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RoleType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="Roles" ToRole="users" />
+    <NavigationProperty Name="users" Relationship="jampracticeModel.FK__users__roletypei__3E52440B" FromRole="Roles" ToRole="users" />
   </EntityType>
   <EntityType Name="SteeringPosition">
     <Key>
@@ -148,8 +155,8 @@
     <Property Name="password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
     <Property Name="companyid" Type="Int32" Nullable="false" />
     <Property Name="roletypeid" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Org" Relationship="jampracticeModel.FK__users__companyid__628FA481" FromRole="users" ToRole="Org" />
-    <NavigationProperty Name="Roles" Relationship="jampracticeModel.FK__users__roletypei__6383C8BA" FromRole="users" ToRole="Roles" />
+    <NavigationProperty Name="Org" Relationship="jampracticeModel.FK__users__companyid__3D5E1FD2" FromRole="users" ToRole="Org" />
+    <NavigationProperty Name="Roles" Relationship="jampracticeModel.FK__users__roletypei__3E52440B" FromRole="users" ToRole="Roles" />
   </EntityType>
   <EntityType Name="Vehicles">
     <Key>
@@ -248,7 +255,7 @@
     <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
-  <Association Name="FK__Dealershi__paris__619B8048">
+  <Association Name="FK__Dealershi__paris__3C69FB99">
     <End Type="jampracticeModel.parishes" Role="parishes" Multiplicity="0..1" />
     <End Type="jampracticeModel.Dealerships" Role="Dealerships" Multiplicity="*" />
     <ReferentialConstraint>
@@ -296,7 +303,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__companyid__628FA481">
+  <Association Name="FK__users__companyid__3D5E1FD2">
     <End Type="jampracticeModel.Org" Role="Org" Multiplicity="1" />
     <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
     <ReferentialConstraint>
@@ -308,7 +315,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__users__roletypei__6383C8BA">
+  <Association Name="FK__users__roletypei__3E52440B">
     <End Type="jampracticeModel.Roles" Role="Roles" Multiplicity="1" />
     <End Type="jampracticeModel.users" Role="users" Multiplicity="*" />
     <ReferentialConstraint>

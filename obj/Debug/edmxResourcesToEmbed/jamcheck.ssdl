@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dealerships">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="tel" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="address" Type="nvarchar" MaxLength="100" />
+    <Property Name="parishid" Type="int" />
+  </EntityType>
+  <EntityType Name="Fuel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImportFrom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Make">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Org">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="parishes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="requests">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="20" />
+    <Property Name="TRN" Type="nvarchar" MaxLength="9" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Email" Type="nvarchar" MaxLength="30" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleType" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SteeringPosition">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransmissionType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="lname" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="companyid" Type="int" Nullable="false" />
+    <Property Name="roletypeid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehicles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="makeid" Type="int" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="fuelid" Type="int" Nullable="false" />
+    <Property Name="ChassisNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VinNum" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Mileage" Type="int" Nullable="false" />
+    <Property Name="Seating" Type="int" Nullable="false" />
+    <Property Name="steeringid" Type="int" Nullable="false" />
+    <Property Name="bodytypeid" Type="int" Nullable="false" />
+    <Property Name="transmissionid" Type="int" Nullable="false" />
+    <Property Name="ImportfromID" Type="int" Nullable="false" />
+    <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImportDate" Type="date" Nullable="false" />
+    <Property Name="Picture" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehicleType">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.UserInfoes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserInfoes">
+    <Key>
+      <PropertyRef Name="First Name" />
+      <PropertyRef Name="Last Name" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="First Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Last Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="20" />
+    <Property Name="Company" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.ViewDealerships' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewDealerships">
+    <Key>
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Telephone" />
+    </Key>
+    <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="Parish" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewVehicles">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="Picture" />
+      <PropertyRef Name="Make" />
+      <PropertyRef Name="Model" />
+      <PropertyRef Name="Fuel" />
+      <PropertyRef Name="ChassisNo" />
+      <PropertyRef Name="VIN" />
+      <PropertyRef Name="year" />
+      <PropertyRef Name="Mileage" />
+      <PropertyRef Name="Seating" />
+      <PropertyRef Name="Steering" />
+      <PropertyRef Name="BodyType" />
+      <PropertyRef Name="Transmission" />
+      <PropertyRef Name="ImportFrom" />
+      <PropertyRef Name="Importer" />
+      <PropertyRef Name="ImportDate" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Picture" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Make" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Model" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Fuel" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ChassisNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VIN" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="year" Type="int" Nullable="false" />
+    <Property Name="Mileage" Type="int" Nullable="false" />
+    <Property Name="Seating" Type="int" Nullable="false" />
+    <Property Name="Steering" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BodyType" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Transmission" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ImportFrom" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ImportDate" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Dealershi__paris__6383C8BA">
+    <End Role="parishes" Type="Self.parishes" Multiplicity="0..1" />
+    <End Role="Dealerships" Type="Self.Dealerships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="parishes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Dealerships">
+        <PropertyRef Name="parishid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__companyid__6477ECF3">
+    <End Role="Org" Type="Self.Org" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Org">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="companyid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__roletypei__656C112C">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="roletypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__bodyty__5165187F">
+    <End Role="VehicleType" Type="Self.VehicleType" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VehicleType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="bodytypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__fuelid__52593CB8">
+    <End Role="Fuel" Type="Self.Fuel" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fuel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="fuelid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__Import__534D60F1">
+    <End Role="ImportFrom" Type="Self.ImportFrom" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ImportFrom">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="ImportfromID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__makeid__5441852A">
+    <End Role="Make" Type="Self.Make" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Make">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="makeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__steeri__5535A963">
+    <End Role="SteeringPosition" Type="Self.SteeringPosition" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SteeringPosition">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="steeringid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Vehicles__transm__5629CD9C">
+    <End Role="TransmissionType" Type="Self.TransmissionType" Multiplicity="1" />
+    <End Role="Vehicles" Type="Self.Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransmissionType">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Vehicles">
+        <PropertyRef Name="transmissionid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="VehiclesDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="index" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="jampracticeModelStoreContainer">
+    <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Make" EntityType="Self.Make" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Org" EntityType="Self.Org" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="parishes" EntityType="Self.parishes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="requests" EntityType="Self.requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SteeringPosition" EntityType="Self.SteeringPosition" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransmissionType" EntityType="Self.TransmissionType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehicles" EntityType="Self.Vehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VehicleType" EntityType="Self.VehicleType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfoes" EntityType="Self.UserInfoes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserInfoes].[First Name] AS [First Name], 
+    [UserInfoes].[Last Name] AS [Last Name], 
+    [UserInfoes].[Username] AS [Username], 
+    [UserInfoes].[Email] AS [Email], 
+    [UserInfoes].[Password] AS [Password], 
+    [UserInfoes].[Role] AS [Role], 
+    [UserInfoes].[Company] AS [Company]
+    FROM [dbo].[UserInfoes] AS [UserInfoes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewDealerships" EntityType="Self.ViewDealerships" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewDealerships].[Name] AS [Name], 
+    [ViewDealerships].[Telephone] AS [Telephone], 
+    [ViewDealerships].[Address] AS [Address], 
+    [ViewDealerships].[Parish] AS [Parish]
+    FROM [dbo].[ViewDealerships] AS [ViewDealerships]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewVehicles" EntityType="Self.ViewVehicles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewVehicles].[id] AS [id], 
+    [ViewVehicles].[Picture] AS [Picture], 
+    [ViewVehicles].[Make] AS [Make], 
+    [ViewVehicles].[Model] AS [Model], 
+    [ViewVehicles].[Fuel] AS [Fuel], 
+    [ViewVehicles].[ChassisNo] AS [ChassisNo], 
+    [ViewVehicles].[VIN] AS [VIN], 
+    [ViewVehicles].[year] AS [year], 
+    [ViewVehicles].[Mileage] AS [Mileage], 
+    [ViewVehicles].[Seating] AS [Seating], 
+    [ViewVehicles].[Steering] AS [Steering], 
+    [ViewVehicles].[BodyType] AS [BodyType], 
+    [ViewVehicles].[Transmission] AS [Transmission], 
+    [ViewVehicles].[ImportFrom] AS [ImportFrom], 
+    [ViewVehicles].[Importer] AS [Importer], 
+    [ViewVehicles].[ImportDate] AS [ImportDate]
+    FROM [dbo].[ViewVehicles] AS [ViewVehicles]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Dealershi__paris__6383C8BA" Association="Self.FK__Dealershi__paris__6383C8BA">
+      <End Role="parishes" EntitySet="parishes" />
+      <End Role="Dealerships" EntitySet="Dealerships" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__companyid__6477ECF3" Association="Self.FK__users__companyid__6477ECF3">
+      <End Role="Org" EntitySet="Org" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__roletypei__656C112C" Association="Self.FK__users__roletypei__656C112C">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__bodyty__5165187F" Association="Self.FK__Vehicles__bodyty__5165187F">
+      <End Role="VehicleType" EntitySet="VehicleType" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__fuelid__52593CB8" Association="Self.FK__Vehicles__fuelid__52593CB8">
+      <End Role="Fuel" EntitySet="Fuel" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__Import__534D60F1" Association="Self.FK__Vehicles__Import__534D60F1">
+      <End Role="ImportFrom" EntitySet="ImportFrom" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__makeid__5441852A" Association="Self.FK__Vehicles__makeid__5441852A">
+      <End Role="Make" EntitySet="Make" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__steeri__5535A963" Association="Self.FK__Vehicles__steeri__5535A963">
+      <End Role="SteeringPosition" EntitySet="SteeringPosition" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Vehicles__transm__5629CD9C" Association="Self.FK__Vehicles__transm__5629CD9C">
+      <End Role="TransmissionType" EntitySet="TransmissionType" />
+      <End Role="Vehicles" EntitySet="Vehicles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

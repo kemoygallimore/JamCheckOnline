@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="JamCheckEntities">
-    <EntitySetMapping Name="customers">
-      <EntityTypeMapping TypeName="jampracticeModel.customers">
-        <MappingFragment StoreEntitySet="customers">
-          <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="DOB" ColumnName="DOB" />
-          <ScalarProperty Name="TRN" ColumnName="TRN" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Dealerships">
       <EntityTypeMapping TypeName="jampracticeModel.Dealerships">
         <MappingFragment StoreEntitySet="Dealerships">
@@ -63,6 +48,19 @@
       <EntityTypeMapping TypeName="jampracticeModel.parishes">
         <MappingFragment StoreEntitySet="parishes">
           <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="requests">
+      <EntityTypeMapping TypeName="jampracticeModel.requests">
+        <MappingFragment StoreEntitySet="requests">
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="TRN" ColumnName="TRN" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -180,5 +178,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="VehiclesDetails" FunctionName="jampracticeModel.Store.VehiclesDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="jampracticeModel.VehiclesDetails_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="makeid" ColumnName="makeid" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="fuelid" ColumnName="fuelid" />
+          <ScalarProperty Name="ChassisNo" ColumnName="ChassisNo" />
+          <ScalarProperty Name="VinNum" ColumnName="VinNum" />
+          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
+          <ScalarProperty Name="Seating" ColumnName="Seating" />
+          <ScalarProperty Name="steeringid" ColumnName="steeringid" />
+          <ScalarProperty Name="bodytypeid" ColumnName="bodytypeid" />
+          <ScalarProperty Name="transmissionid" ColumnName="transmissionid" />
+          <ScalarProperty Name="ImportfromID" ColumnName="ImportfromID" />
+          <ScalarProperty Name="Importer" ColumnName="Importer" />
+          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

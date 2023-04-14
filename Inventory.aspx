@@ -1,13 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JamCheck.Master" AutoEventWireup="true" CodeBehind="Inventory.aspx.cs" Inherits="MyfirstWebApplication1.WebForm4" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        table{
-            border-top-width:0px;
-            border-bottom-width:0px;
-        }
-    </style>
-    <div style="width:1100px;margin: 0 auto">
-        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" GridLines="Horizontal" PageSize="20" Width="100%" BorderStyle="None">
+    
+    <asp:Panel ID="tablepanel" runat="server">
+        <div style="width:1100px;margin: 0 auto">
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="5" GridLines="Horizontal" PageSize="20" Width="100%" BorderStyle="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged2">
             <AlternatingRowStyle BackColor="#DADADA" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" >
@@ -43,5 +39,28 @@
         </asp:GridView>
     
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=jampractice;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [Picture], [Make], [Model], [Fuel], [year], [Transmission] FROM [ViewVehicles]"></asp:SqlDataSource>
-    </div>    
+    </div>   
+    </asp:Panel>
+    
+    <div>
+        <asp:Panel ID="resultspanel" runat="server">
+            <div style="width:1140px" class="Flex-Container">
+                <div style="width:50%">
+                    <asp:Image ID="displayimage" runat="server" />
+                </div>
+                <div style="width:50%" class="Flex-Container">
+                    <div style="width:50%" class="justify-content-end">
+                        right left
+                    </div>
+                    <div style="width:50%">
+                        right right
+                    </div>
+
+                </div>
+            </div>
+
+            <asp:TextBox ID="maketxtbx" runat="server"></asp:TextBox>
+        </asp:Panel>
+    </div>
+
 </asp:Content>

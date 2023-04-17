@@ -63,6 +63,10 @@
             display: flex;
             justify-content: end;
         }
+        .justify-content-center {
+            display: flex;
+            justify-content: center;
+        }
         .pd-l-r-1{
             padding:0 1em;
         }
@@ -74,6 +78,21 @@
         }
         .pd-t-b-2{
             padding:2em 0;
+        }
+        .displayimg{
+            width:100%;
+            border-radius:20px;
+        }
+        #ReportAvailabiliy{
+            padding: 2em 0 4em 0;
+            font-size:20pt;
+        }
+        .Checkboxclass{
+            height:30pt;
+            width:30pt;
+        }
+        #Yes{
+            font-size:30pt;
         }
         </style>
 </head>

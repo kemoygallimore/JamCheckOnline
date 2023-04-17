@@ -52,19 +52,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="requests">
-      <EntityTypeMapping TypeName="jampracticeModel.requests">
-        <MappingFragment StoreEntitySet="requests">
-          <ScalarProperty Name="Tel" ColumnName="Tel" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="DOB" ColumnName="DOB" />
-          <ScalarProperty Name="TRN" ColumnName="TRN" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="jampracticeModel.Roles">
         <MappingFragment StoreEntitySet="Roles">
@@ -106,6 +93,9 @@
     <EntitySetMapping Name="Vehicles">
       <EntityTypeMapping TypeName="jampracticeModel.Vehicles">
         <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="Report_Ext" ColumnName="Report_Ext" />
+          <ScalarProperty Name="Report_Name" ColumnName="Report_Name" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
           <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
           <ScalarProperty Name="Importer" ColumnName="Importer" />
@@ -159,6 +149,7 @@
     <EntitySetMapping Name="ViewVehicles">
       <EntityTypeMapping TypeName="jampracticeModel.ViewVehicles">
         <MappingFragment StoreEntitySet="ViewVehicles">
+          <ScalarProperty Name="Report" ColumnName="Report" />
           <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
           <ScalarProperty Name="Importer" ColumnName="Importer" />
           <ScalarProperty Name="ImportFrom" ColumnName="ImportFrom" />
@@ -178,27 +169,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="VehiclesDetails" FunctionName="jampracticeModel.Store.VehiclesDetails">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="jampracticeModel.VehiclesDetails_Result">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="year" ColumnName="year" />
-          <ScalarProperty Name="makeid" ColumnName="makeid" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
-          <ScalarProperty Name="fuelid" ColumnName="fuelid" />
-          <ScalarProperty Name="ChassisNo" ColumnName="ChassisNo" />
-          <ScalarProperty Name="VinNum" ColumnName="VinNum" />
-          <ScalarProperty Name="Mileage" ColumnName="Mileage" />
-          <ScalarProperty Name="Seating" ColumnName="Seating" />
-          <ScalarProperty Name="steeringid" ColumnName="steeringid" />
-          <ScalarProperty Name="bodytypeid" ColumnName="bodytypeid" />
-          <ScalarProperty Name="transmissionid" ColumnName="transmissionid" />
-          <ScalarProperty Name="ImportfromID" ColumnName="ImportfromID" />
-          <ScalarProperty Name="Importer" ColumnName="Importer" />
-          <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
-          <ScalarProperty Name="Picture" ColumnName="Picture" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -1,19 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="jampracticeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="customers">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="TRN" Type="nvarchar" MaxLength="9" Nullable="false" />
-    <Property Name="DOB" Type="date" Nullable="false" />
-    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="10" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="Username" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="CustPassword" Type="nvarchar" MaxLength="15" Nullable="false" />
-  </EntityType>
   <EntityType Name="Dealerships">
     <Key>
       <PropertyRef Name="id" />
@@ -113,6 +99,9 @@
     <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ImportDate" Type="date" Nullable="false" />
     <Property Name="Picture" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Report" Type="varbinary(max)" />
+    <Property Name="Report_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Report_Ext" Type="nchar" MaxLength="5" />
   </EntityType>
   <EntityType Name="VehicleType">
     <Key>
@@ -188,6 +177,7 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     <Property Name="ImportFrom" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Importer" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="ImportDate" Type="date" Nullable="false" />
+    <Property Name="Report" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK__Dealershi__paris__3C69FB99">
     <End Role="parishes" Type="Self.parishes" Multiplicity="0..1" />
@@ -298,7 +288,6 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="jampracticeModelStoreContainer">
-    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Dealerships" EntityType="Self.Dealerships" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Fuel" EntityType="Self.Fuel" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ImportFrom" EntityType="Self.ImportFrom" Schema="dbo" store:Type="Tables" />
@@ -347,7 +336,8 @@ warning 6002: The table/view 'jampractice.dbo.ViewVehicles' does not have a prim
     [ViewVehicles].[Transmission] AS [Transmission], 
     [ViewVehicles].[ImportFrom] AS [ImportFrom], 
     [ViewVehicles].[Importer] AS [Importer], 
-    [ViewVehicles].[ImportDate] AS [ImportDate]
+    [ViewVehicles].[ImportDate] AS [ImportDate], 
+    [ViewVehicles].[Report] AS [Report]
     FROM [dbo].[ViewVehicles] AS [ViewVehicles]</DefiningQuery>
     </EntitySet>
     <AssociationSet Name="FK__Dealershi__paris__3C69FB99" Association="Self.FK__Dealershi__paris__3C69FB99">

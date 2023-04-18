@@ -1,21 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="jampracticeModelStoreContainer" CdmEntityContainer="JamCheckEntities">
-    <EntitySetMapping Name="customers">
-      <EntityTypeMapping TypeName="jampracticeModel.customers">
-        <MappingFragment StoreEntitySet="customers">
-          <ScalarProperty Name="CustPassword" ColumnName="CustPassword" />
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="DOB" ColumnName="DOB" />
-          <ScalarProperty Name="TRN" ColumnName="TRN" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Dealerships">
       <EntityTypeMapping TypeName="jampracticeModel.Dealerships">
         <MappingFragment StoreEntitySet="Dealerships">
@@ -108,6 +93,9 @@
     <EntitySetMapping Name="Vehicles">
       <EntityTypeMapping TypeName="jampracticeModel.Vehicles">
         <MappingFragment StoreEntitySet="Vehicles">
+          <ScalarProperty Name="Report_Ext" ColumnName="Report_Ext" />
+          <ScalarProperty Name="Report_Name" ColumnName="Report_Name" />
+          <ScalarProperty Name="Report" ColumnName="Report" />
           <ScalarProperty Name="Picture" ColumnName="Picture" />
           <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
           <ScalarProperty Name="Importer" ColumnName="Importer" />
@@ -161,6 +149,7 @@
     <EntitySetMapping Name="ViewVehicles">
       <EntityTypeMapping TypeName="jampracticeModel.ViewVehicles">
         <MappingFragment StoreEntitySet="ViewVehicles">
+          <ScalarProperty Name="Report" ColumnName="Report" />
           <ScalarProperty Name="ImportDate" ColumnName="ImportDate" />
           <ScalarProperty Name="Importer" ColumnName="Importer" />
           <ScalarProperty Name="ImportFrom" ColumnName="ImportFrom" />

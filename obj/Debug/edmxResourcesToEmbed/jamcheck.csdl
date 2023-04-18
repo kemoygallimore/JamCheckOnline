@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="jampracticeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="JamCheckEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="customers" EntityType="jampracticeModel.customers" />
+    <FunctionImport Name="VehiclesDetails" ReturnType="Collection(jampracticeModel.VehiclesDetails_Result)">
+      <Parameter Name="index" Mode="In" Type="Int32" />
+    </FunctionImport>
     <EntitySet Name="Dealerships" EntityType="jampracticeModel.Dealerships" />
     <EntitySet Name="Fuel" EntityType="jampracticeModel.Fuel" />
     <EntitySet Name="ImportFrom" EntityType="jampracticeModel.ImportFrom" />
@@ -54,20 +56,24 @@
       <End Role="Vehicles" EntitySet="Vehicles" />
     </AssociationSet>
   </EntityContainer>
-  <EntityType Name="customers">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="LastName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="TRN" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
-    <Property Name="DOB" Type="DateTime" Nullable="false" Precision="0" />
-    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="Email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Username" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-    <Property Name="CustPassword" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-  </EntityType>
+  <ComplexType Name="VehiclesDetails_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="year" Nullable="false" />
+    <Property Type="Int32" Name="makeid" Nullable="false" />
+    <Property Type="String" Name="Model" Nullable="false" MaxLength="30" />
+    <Property Type="Int32" Name="fuelid" Nullable="false" />
+    <Property Type="String" Name="ChassisNo" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="VinNum" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="Mileage" Nullable="false" />
+    <Property Type="Int32" Name="Seating" Nullable="false" />
+    <Property Type="Int32" Name="steeringid" Nullable="false" />
+    <Property Type="Int32" Name="bodytypeid" Nullable="false" />
+    <Property Type="Int32" Name="transmissionid" Nullable="false" />
+    <Property Type="Int32" Name="ImportfromID" Nullable="false" />
+    <Property Type="String" Name="Importer" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ImportDate" Nullable="false" />
+    <Property Type="Binary" Name="Picture" Nullable="false" />
+  </ComplexType>
   <EntityType Name="Dealerships">
     <Key>
       <PropertyRef Name="id" />
@@ -178,6 +184,9 @@
     <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Picture" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="Report" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Report_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Report_Ext" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="Fuel" Relationship="jampracticeModel.FK__Vehicles__fuelid__52593CB8" FromRole="Vehicles" ToRole="Fuel" />
     <NavigationProperty Name="ImportFrom" Relationship="jampracticeModel.FK__Vehicles__Import__534D60F1" FromRole="Vehicles" ToRole="ImportFrom" />
     <NavigationProperty Name="Make" Relationship="jampracticeModel.FK__Vehicles__makeid__5441852A" FromRole="Vehicles" ToRole="Make" />
@@ -254,6 +263,7 @@
     <Property Name="ImportFrom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Importer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Report" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK__Dealershi__paris__3C69FB99">
     <End Type="jampracticeModel.parishes" Role="parishes" Multiplicity="0..1" />

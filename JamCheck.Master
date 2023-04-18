@@ -44,11 +44,61 @@
             flex-direction:row;
             column-gap:20px
         }
+        .templateSection
+        {
+            display:flex;
+            flex-flow:column;
+            min-height:100vh;
+        }
+        table{
+            border-top-width:0px;
+            border-bottom-width:0px;
+        }
+        .Flex-Container{
+            display:flex;
+            margin:0 auto;
+            column-gap:2em;
+        }
+        .justify-content-end {
+            display: flex;
+            justify-content: end;
+        }
+        .justify-content-center {
+            display: flex;
+            justify-content: center;
+        }
+        .pd-l-r-1{
+            padding:0 1em;
+        }
+        .pd-l-r-2{
+            padding:0 2em;
+        }
+        .pd-t-b-1{
+            padding:1em 0;
+        }
+        .pd-t-b-2{
+            padding:2em 0;
+        }
+        .displayimg{
+            width:100%;
+            border-radius:20px;
+        }
+        #ReportAvailabiliy{
+            padding: 2em 0 4em 0;
+            font-size:20pt;
+        }
+        .Checkboxclass{
+            height:30pt;
+            width:30pt;
+        }
+        #Yes{
+            font-size:30pt;
+        }
         </style>
 </head>
-<body style="min-height:100vh">
+<body">
     <form id="form1" runat="server">
-        <div>
+        <div class="templateSection">
             <div class="green_color space_between center-items">
                 <div>
                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Properties/logo.png" Cssclass="masterimage" />
@@ -57,10 +107,10 @@
                     <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                         <Items>
                             <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue" NavigateUrl="~/Inventory.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="#"></asp:MenuItem>
-                            <asp:MenuItem Text="FAQ's" Value="FAQ's" ></asp:MenuItem>
+                            <asp:MenuItem Text="FAQ's" Value="FAQ's" NavigateUrl="~/FAQ.aspx" ></asp:MenuItem>
                             <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Sign Up" Value="Sign Up" NavigateUrl="~/Register.aspx"></asp:MenuItem>
                         </Items>
@@ -71,9 +121,10 @@
                 </div>
             </div>
             
-                    <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
-            <footer>                
+            <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <footer style="margin-top:auto">                
                 <div class="green_color center-items">
                     <asp:Image ID="Image2" runat="server" ImageUrl="~/Properties/logo.png"  Cssclass="masterimage" />
                 <div class="container space_between">

@@ -7,9 +7,19 @@ using System.Web.UI.WebControls;
 
 namespace MyfirstWebApplication1
 {
-    public partial class ContactUs : System.Web.UI.Page
+    public partial class WebForm4 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void PasswordConftxtbx_TextChanged(object sender, EventArgs e)
         {
 
         }

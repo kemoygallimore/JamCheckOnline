@@ -4,23 +4,22 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="24fde04d13ad4fbe98fb2ff4a9775b50" Name="Diagram1" >
-        <EntityTypeShape EntityType="jampracticeModel.Dealerships" Width="1.5" PointX="10" PointY="4.875" />
-        <EntityTypeShape EntityType="jampracticeModel.Fuel" Width="1.5" PointX="0.75" PointY="8.375" />
-        <EntityTypeShape EntityType="jampracticeModel.ImportFrom" Width="1.5" PointX="0.75" PointY="13.125" />
-        <EntityTypeShape EntityType="jampracticeModel.Make" Width="1.5" PointX="0.75" PointY="15.5" />
-        <EntityTypeShape EntityType="jampracticeModel.Org" Width="1.5" PointX="5.75" PointY="5.625" />
+      <Diagram DiagramId="24fde04d13ad4fbe98fb2ff4a9775b50" Name="Diagram1" ZoomLevel="125" >
+        <EntityTypeShape EntityType="jampracticeModel.Dealerships" Width="1.5" PointX="10" PointY="5.25" />
+        <EntityTypeShape EntityType="jampracticeModel.Fuel" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="jampracticeModel.ImportFrom" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="jampracticeModel.Make" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="jampracticeModel.Org" Width="1.5" PointX="10.25" PointY="1" />
         <EntityTypeShape EntityType="jampracticeModel.parishes" Width="1.5" PointX="7.75" PointY="5.25" />
-        <EntityTypeShape EntityType="jampracticeModel.requests" Width="1.5" PointX="2.75" PointY="7.75" />
-        <EntityTypeShape EntityType="jampracticeModel.Roles" Width="1.5" PointX="5.75" PointY="1.625" />
-        <EntityTypeShape EntityType="jampracticeModel.SteeringPosition" Width="1.5" PointX="0.75" PointY="2.875" />
-        <EntityTypeShape EntityType="jampracticeModel.TransmissionType" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="jampracticeModel.Roles" Width="1.5" PointX="5.75" PointY="1" />
+        <EntityTypeShape EntityType="jampracticeModel.SteeringPosition" Width="1.5" PointX="0.75" PointY="11.125" />
+        <EntityTypeShape EntityType="jampracticeModel.TransmissionType" Width="1.5" PointX="0.75" PointY="3.25" />
         <EntityTypeShape EntityType="jampracticeModel.users" Width="1.5" PointX="8" PointY="1" />
         <EntityTypeShape EntityType="jampracticeModel.Vehicles" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="jampracticeModel.VehicleType" Width="1.5" PointX="0.75" PointY="6" />
-        <EntityTypeShape EntityType="jampracticeModel.UserInfoes" Width="1.5" PointX="4.75" PointY="8.75" />
-        <EntityTypeShape EntityType="jampracticeModel.ViewDealerships" Width="1.5" PointX="6.75" PointY="8.75" />
-        <EntityTypeShape EntityType="jampracticeModel.ViewVehicles" Width="1.5" PointX="8.75" PointY="8.75" />
+        <EntityTypeShape EntityType="jampracticeModel.VehicleType" Width="1.5" PointX="0.75" PointY="13.375" />
+        <EntityTypeShape EntityType="jampracticeModel.UserInfoes" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="jampracticeModel.ViewDealerships" Width="1.5" PointX="4.75" PointY="8.75" />
+        <EntityTypeShape EntityType="jampracticeModel.ViewVehicles" Width="1.5" PointX="6.75" PointY="8.75" />
         <AssociationConnector Association="jampracticeModel.FK__Dealershi__paris__3C69FB99" />
         <AssociationConnector Association="jampracticeModel.FK__Vehicles__fuelid__52593CB8" />
         <AssociationConnector Association="jampracticeModel.FK__Vehicles__Import__534D60F1" />

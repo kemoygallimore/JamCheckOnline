@@ -126,7 +126,7 @@
                                 <asp:Label ID="Label9" runat="server" Text="Comments" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
                             <td class="Half">
-                                <asp:TextBox ID="PasswordConftxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes" Height="285px"></asp:TextBox>
+                                <asp:TextBox ID="PasswordConftxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes" Height="285px" OnTextChanged="PasswordConftxtbx_TextChanged"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="PasswordConfirmation" runat="server" ControlToValidate="PasswordConftxtbx" ErrorMessage="Passwords do not match">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>

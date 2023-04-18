@@ -138,9 +138,6 @@
                         <tr>
                             <td style="text-align:center" class="half button-area">
                                 <asp:Button ID="Submitbtn" runat="server" Text="Send Message" OnClick="Button1_Click" BackColor="#00CC00" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Font-Bold="True" Width="250px" />
-                                <p style="text-align:center;margin-top:10px">
-                                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/login.aspx">Already have an account? (Click Here)</asp:HyperLink>
-                                </p>
                             </td>
                         </tr>
                     </tbody>
@@ -149,8 +146,6 @@
             </asp:Panel>
             
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="You have to be 18 or older to be come a member." Type="Date" ControlToValidate="DOBtxtbx"></asp:RangeValidator><br />
-            <asp:CompareValidator ID="PasswordCompareValidator" runat="server" ControlToCompare="Passwordtxtbx" ControlToValidate="PasswordConftxtbx" ErrorMessage="Passwords do not match"></asp:CompareValidator><br />
             <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="Eamiltxtbx" Visible="True" ErrorMessage="Incorrect Email Format"></asp:RegularExpressionValidator><br />
             <asp:RegularExpressionValidator ID="TRNFormat" runat="server" ValidationExpression="\d{3}-\d{3}-\d{3}" ControlToValidate="TRNtxtbx"></asp:RegularExpressionValidator>
                             

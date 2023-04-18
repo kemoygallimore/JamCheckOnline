@@ -129,6 +129,7 @@
     <Content Include="Inventory.aspx" />
     <Content Include="ViewCarDetails.aspx" />
     <Content Include="ContactUs.aspx" />
+    <Content Include="FAQ.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="baseclass.cs" />
@@ -261,6 +262,13 @@
     </Compile>
     <Compile Include="ContactUs.aspx.designer.cs">
       <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

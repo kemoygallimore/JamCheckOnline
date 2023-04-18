@@ -107,10 +107,10 @@
                     <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
                         <Items>
                             <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Home.aspx"></asp:MenuItem>
-                            <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                            <asp:MenuItem Text="Contact Us" Value="Contact Us" NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Search Catalogue" Value="Search Catalogue" NavigateUrl="~/Inventory.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="#"></asp:MenuItem>
-                            <asp:MenuItem Text="FAQ's" Value="FAQ's" ></asp:MenuItem>
+                            <asp:MenuItem Text="FAQ's" Value="FAQ's" NavigateUrl="~/FAQ.aspx" ></asp:MenuItem>
                             <asp:MenuItem Text="Login" Value="Login" NavigateUrl="~/Login.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="Sign Up" Value="Sign Up" NavigateUrl="~/Register.aspx"></asp:MenuItem>
                         </Items>

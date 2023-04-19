@@ -272,3 +272,16 @@ C:\Users\Yvette\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Razor.
 C:\Users\Yvette\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.xml
 C:\Users\Yvette\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Yvette\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Razor.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Helpers.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Mvc.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Razor.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Deployment.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Razor.dll
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Helpers.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Mvc.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.Razor.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Deployment.xml
+C:\Users\kemoy\Source\Repos\kemoygallimore\JamCheckOnline\bin\System.Web.WebPages.Razor.xml

@@ -114,22 +114,22 @@ namespace MyfirstWebApplication1
         protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// DOBtxtbx control.
+        /// Teltxtbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DOBtxtbx;
+        protected global::System.Web.UI.WebControls.TextBox Teltxtbx;
 
         /// <summary>
-        /// DOBRequired control.
+        /// TelRequired control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator DOBRequired;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator TelRequired;
 
         /// <summary>
         /// Label11 control.
@@ -168,22 +168,22 @@ namespace MyfirstWebApplication1
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// Passwordtxtbx control.
+        /// Chassistxtbx control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Passwordtxtbx;
+        protected global::System.Web.UI.WebControls.TextBox Chassistxtbx;
 
         /// <summary>
-        /// PasswordRequired control.
+        /// ChassisRequired control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator PasswordRequired;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator ChassisRequired;
 
         /// <summary>
         /// Label9 control.

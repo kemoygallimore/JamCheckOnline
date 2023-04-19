@@ -11,7 +11,7 @@
             padding-bottom:5em;
         }
         .Half{
-            width:50%;
+            
             padding:5px 0 5px 0;
         }
         .right{
@@ -49,10 +49,13 @@
         .register_boxes{
             padding:2px 5px;
         }
+        table{
+            width:100%
+        }
     </style>
     
     <div class="Form-center">
-        <div style="width:480px;background:#ffffbb;border-radius:20px;">
+        <div style="width:max-content;background:#ffffbb;border-radius:20px;">
             <asp:Panel ID="Panel1" runat="server">
 
                 <h2 class="register-title">Contact Us</h2>
@@ -66,8 +69,6 @@
                                 <asp:TextBox ID="fnametxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="FirstNameRequired" runat="server" ErrorMessage="First Name is Required" ControlToValidate="fnametxtbx">*</asp:RequiredFieldValidator>
                             </td>
-                        </tr>
-                        <tr>
                             <td class="Half right">
                                 <asp:Label ID="Label14" runat="server" Text="Last Name" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
@@ -77,29 +78,30 @@
                             </td>
                         </tr>
                         <tr>
-                        
+                            
+                        </tr>
+                        <tr>                        
                             <td class="Half right ">
                                 <asp:Label ID="Label13" runat="server" Text="TRN #" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
                             <td class="Half">
                                 <asp:TextBox ID="TRNtxtbx" runat="server" Font-Size="13pt" Width="170px" TextMode="Number" Font-Names="Arial Narrow" CssClass="register_boxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="TRNRequired" runat="server" ControlToValidate="TRNtxtbx" ErrorMessage="TRN is required">*</asp:RequiredFieldValidator>
-                                
+                                <asp:RequiredFieldValidator ID="TRNRequired" runat="server" ControlToValidate="TRNtxtbx" ErrorMessage="TRN is required">*</asp:RequiredFieldValidator>      
                             </td>
-                        </tr>
-                        <tr>
-                        
                             <td class="Half right " >
                                 <asp:Label ID="Label12" runat="server" Text="Telephone" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
                             <td class="Half">
-                                <asp:TextBox ID="DOBtxtbx" placeholder="DD/MM/YYYY" runat="server" Width="170px" TextMode="Date" Font-Names="Arial Narrow" Font-Size="13pt" CssClass="register_boxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="DOBRequired" runat="server" ControlToValidate="DOBtxtbx" ErrorMessage="Date of Birth is missing" Visible="False">*</asp:RequiredFieldValidator>
+                                <asp:TextBox ID="Teltxtbx" placeholder="8761234567" runat="server" Width="170px" TextMode="Phone" Font-Names="Arial Narrow" Font-Size="13pt" CssClass="register_boxes"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="TelRequired" runat="server" ControlToValidate="Teltxtbx" ErrorMessage="Phone Number Required" Visible="False">*</asp:RequiredFieldValidator>
                                 
                             </td>
                         </tr>
                         <tr>
                         
+                            
+                        </tr>
+                        <tr>                        
                             <td class="Half right ">
                                 <asp:Label ID="Label11" runat="server" Text="Email" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
@@ -108,31 +110,31 @@
                                 <asp:RequiredFieldValidator ID="EmailRequired" runat="server" ControlToValidate="Eamiltxtbx" ErrorMessage="Email is required">*</asp:RequiredFieldValidator>
 
                             </td>
-                        </tr>
-                        <tr>
-                        
                             <td class="Half right ">
                                 <asp:Label ID="Label10" runat="server" Text="Chasis Number Query" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
                             <td class="Half">
-                                <asp:TextBox ID="Passwordtxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Passwordtxtbx" ErrorMessage="Password is cannot be empty">*</asp:RequiredFieldValidator>
-
+                                <asp:TextBox ID="Chassistxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="ChassisRequired" runat="server" ControlToValidate="Chassistxtbx" ErrorMessage="Vin Number Required">*</asp:RequiredFieldValidator>
                             </td>
-                        </tr>
-                        <tr>
-                        
-                            <td class="Half right ">
+                        </tr>                        
+                    </tbody>
+                </table>
+                <!-- this is for the comment box-->
+                <table style="padding:10px 40px">
+                    <tbody>
+                        <tr>                        
+                            <td class="" style="width:15%">
                                 <asp:Label ID="Label9" runat="server" Text="Comments" Font-Size="14pt" CssClass="register_labels"></asp:Label>
                             </td>
-                            <td class="Half">
-                                <asp:TextBox ID="PasswordConftxtbx" runat="server" Font-Size="13pt" Width="170px" Font-Names="Arial Narrow" CssClass="register_boxes" Height="285px" OnTextChanged="PasswordConftxtbx_TextChanged"></asp:TextBox>
+                            <td class="">
+                                <asp:TextBox ID="PasswordConftxtbx" runat="server" Font-Size="13pt" Width="95%" Font-Names="Arial Narrow" CssClass="register_boxes" Height="150px" OnTextChanged="PasswordConftxtbx_TextChanged"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="PasswordConfirmation" runat="server" ControlToValidate="PasswordConftxtbx" ErrorMessage="Passwords do not match">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
-                        
                     </tbody>
                 </table>
+                <!--This table is for the submit button section -->
                 <table style="width:100%">
                     <tbody>
                         <tr>

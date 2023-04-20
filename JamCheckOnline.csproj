@@ -281,7 +281,9 @@
       <DependentUpon>JamCheck.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
-    <Content Include="Razor page.cshtml" />
+    <Content Include="_LayoutView.cshtml" />
+    <Content Include="ViewPage2.cshtml" />
+    <Content Include="ViewPage1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

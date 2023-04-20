@@ -36,32 +36,34 @@
             <RowStyle HorizontalAlign="Center"/>
         </asp:GridView>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=jampractice;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT	  v.id,
-	  Picture,
-      m.name[Make],
-	  Model,
-      f.name[Fuel],
-      ChassisNo,
-      Vinnum [VIN],
-	  year,
-      Mileage,
-      Seating,
-      s.name[Steering],
-      body.Name [BodyType],
-      t.name[Transmission],
-      imp.Name[ImportFrom],
-      Importer,
-      ImportDate,
-	  v.Report,
-v.Report_name,
-v.Report_Ext
-  FROM Vehicles v
-  join make m on m.id = v.makeid
-  join fuel f on f.id = v.fuelid
-  join SteeringPosition s on s.id = v.steeringid
-  join VehicleType body on body.id = v.bodytypeid
-  join transmissiontype t on t.id = v.transmissionid
-  join ImportFrom imp on imp.id = v.ImportFromID"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=jampractice;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT
+          v.id,
+	      Picture,
+          m.name[Make],
+	      Model,
+          f.name[Fuel],
+          ChassisNo,
+          Vinnum [VIN],
+	      year,
+          Mileage,
+          Seating,
+          s.name[Steering],
+          body.Name [BodyType],
+          t.name[Transmission],
+          imp.Name[ImportFrom],
+          Importer,
+          ImportDate,
+	      v.Report,
+          v.Report_name,
+          v.Report_Ext
+          FROM Vehicles v
+          join make m on m.id = v.makeid
+          join fuel f on f.id = v.fuelid
+          join SteeringPosition s on s.id = v.steeringid
+          join VehicleType body on body.id = v.bodytypeid
+          join transmissiontype t on t.id = v.transmissionid
+          join ImportFrom imp on imp.id = v.ImportFromID">
+        </asp:SqlDataSource>
     </div>   
     </asp:Panel>
      <div>
@@ -109,6 +111,9 @@ v.Report_Ext
                 
             </div>
         </asp:Panel>
+         <div>
+             <asp:Label ID="errormessagelbl" runat="server" Text="Label"></asp:Label>
+         </div>
     </div>
 
 

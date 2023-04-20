@@ -11,7 +11,7 @@ namespace MyfirstWebApplication1
 {
 
 
-    public partial class WebForm4
+    public partial class Contactpage
     {
 
         /// <summary>

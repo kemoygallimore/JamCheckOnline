@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JamCheck.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="MyfirstWebApplication1.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/JamCheck.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="MyfirstWebApplication1.Contactpage" %>
 
 
 <asp:Content ID ="contactUs" ContentPlaceHolderID ="ContentPlaceHolder1" runat="server">
@@ -11,7 +11,6 @@
             padding-bottom:5em;
         }
         .Half{
-            
             padding:5px 0 5px 0;
         }
         .right{

@@ -22,26 +22,37 @@ namespace MyfirstWebApplication1
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var reportcell = GridView1.SelectedDataKey["Report_name"].ToString();
-            if (GridView1.SelectedDataKey["Report_name"].ToString() == "" || GridView1.SelectedDataKey["Report_name"].ToString()==null)
-                No.Checked= true;
-            else
-                Yes.Checked= true;
+            try
+            {
+                var reportcell = GridView1.SelectedDataKey["Report_name"].ToString();
+                if (GridView1.SelectedDataKey["Report_name"].ToString() == "" || GridView1.SelectedDataKey["Report_name"].ToString()==null)
+                    No.Checked= true;
+                else
+                    Yes.Checked= true;
             
-            Manufacturerlbl.Text = GridView1.SelectedRow.Cells[2].Text;
-            Yearlbl.Text = GridView1.SelectedRow.Cells[7].Text;
-            Modellbl.Text = GridView1.SelectedRow.Cells[3].Text;
-            BodyTypelbl.Text = GridView1.SelectedRow.Cells[11].Text;
-            Transmissionlbl.Text = GridView1.SelectedRow.Cells[12].Text;
-            Fuellbl.Text = GridView1.SelectedRow.Cells[4].Text;
-            Seatinglbl.Text = GridView1.SelectedDataKey["Seating"].ToString();
-            Mileagelbl.Text = GridView1.SelectedDataKey["Mileage"].ToString();
-            Steeringlbl.Text = GridView1.SelectedRow.Cells[10].Text;
-            VINNumlbl.Text = GridView1.SelectedDataKey["VIN"].ToString();
-            ImportedFromlbl.Text = GridView1.SelectedDataKey["ImportFrom"].ToString();
-            displayimage.ImageUrl = ((Image)GridView1.SelectedRow.Cells[0].FindControl("Image1")).ImageUrl;
-            tablepanel.Visible = false;
-            resultspanel.Visible = true;
+                Manufacturerlbl.Text = GridView1.SelectedRow.Cells[2].Text;
+                Yearlbl.Text = GridView1.SelectedRow.Cells[7].Text;
+                Modellbl.Text = GridView1.SelectedRow.Cells[3].Text;
+                BodyTypelbl.Text = GridView1.SelectedRow.Cells[11].Text;
+                Transmissionlbl.Text = GridView1.SelectedRow.Cells[12].Text;
+                Fuellbl.Text = GridView1.SelectedRow.Cells[4].Text;
+                Seatinglbl.Text = GridView1.SelectedDataKey["Seating"].ToString();
+                Mileagelbl.Text = GridView1.SelectedDataKey["Mileage"].ToString();
+                Steeringlbl.Text = GridView1.SelectedRow.Cells[10].Text;
+                VINNumlbl.Text = GridView1.SelectedDataKey["VIN"].ToString();
+                ImportedFromlbl.Text = GridView1.SelectedDataKey["ImportFrom"].ToString();
+                displayimage.ImageUrl = ((Image)GridView1.SelectedRow.Cells[0].FindControl("Image1")).ImageUrl;
+                tablepanel.Visible = false;
+                resultspanel.Visible = true;
+            }
+            catch (Exception error)
+            {
+                resultspanel.Visible=false;
+                tablepanel.Visible=false;
+                errormessagelbl.Visible = true;
+                errormessagelbl.Text=error.Message +"\n\nSource: "+ error.Source;
+            }
+            
 
             //Response.Redirect("ViewCarDetails.aspx?");
 

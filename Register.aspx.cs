@@ -43,5 +43,14 @@ namespace MyfirstWebApplication1
             ConfirmationScreen.Visible = true;
         }
 
+        protected void Testbtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void Testbtn_Click1(object sender, EventArgs e)
+        {
+            Response.Write("This is a test");
+        }
     }
 }

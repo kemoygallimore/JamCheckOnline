@@ -136,6 +136,7 @@
                     <tbody>
                         <tr>
                             <td style="text-align:center" class="half button-area">
+                                <asp:Button ID="Testbtn" runat="server" Text="Test Button" OnClick="Testbtn_Click1" BackColor="#00CC00" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Font-Bold="True" Width="250px" />
                                 <asp:Button ID="Submitbtn" runat="server" Text="Submit" OnClick="Button1_Click" BackColor="#00CC00" BorderColor="#C5BBAF" BorderStyle="Solid" BorderWidth="1px" Font-Names="Segoe UI" Font-Size="Large" ForeColor="White" Font-Bold="True" Width="250px" />
                                 <p style="text-align:center;margin-top:10px">
                                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/login.aspx">Already have an account? (Click Here)</asp:HyperLink>
